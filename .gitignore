@@ -1,0 +1,8 @@
+# 大文件
+*.rar
+*.zip
+*.7z
+*.gz
+*.tar
+*.pdf
+*.exe
