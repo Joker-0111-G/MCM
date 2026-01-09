@@ -1,0 +1,359 @@
+{
+  "optimizacion_exhaustiva": {
+    "mejor": {
+      "rescatista1_ruta": [
+        "R1",
+        "R3",
+        "R5"
+      ],
+      "rescatista2_ruta": [
+        "R2",
+        "R4",
+        "R6"
+      ],
+      "rescatista1_cuartos": 3,
+      "rescatista2_cuartos": 3,
+      "tiempo1": 114.99000000000001,
+      "tiempo2": 119.16,
+      "tiempo_total": 119.16
+    },
+    "top_10": [
+      {
+        "rescatista1_ruta": [
+          "R1",
+          "R3",
+          "R5"
+        ],
+        "rescatista2_ruta": [
+          "R2",
+          "R4",
+          "R6"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 114.99000000000001,
+        "tiempo2": 119.16,
+        "tiempo_total": 119.16
+      },
+      {
+        "rescatista1_ruta": [
+          "R1",
+          "R3",
+          "R6"
+        ],
+        "rescatista2_ruta": [
+          "R2",
+          "R4",
+          "R5"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 119.16,
+        "tiempo2": 115.0,
+        "tiempo_total": 119.16
+      },
+      {
+        "rescatista1_ruta": [
+          "R1",
+          "R4",
+          "R6"
+        ],
+        "rescatista2_ruta": [
+          "R2",
+          "R3",
+          "R5"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 119.16,
+        "tiempo2": 115.0,
+        "tiempo_total": 119.16
+      },
+      {
+        "rescatista1_ruta": [
+          "R2",
+          "R3",
+          "R5"
+        ],
+        "rescatista2_ruta": [
+          "R1",
+          "R4",
+          "R6"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 115.0,
+        "tiempo2": 119.16,
+        "tiempo_total": 119.16
+      },
+      {
+        "rescatista1_ruta": [
+          "R2",
+          "R4",
+          "R5"
+        ],
+        "rescatista2_ruta": [
+          "R1",
+          "R3",
+          "R6"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 115.0,
+        "tiempo2": 119.16,
+        "tiempo_total": 119.16
+      },
+      {
+        "rescatista1_ruta": [
+          "R2",
+          "R4",
+          "R6"
+        ],
+        "rescatista2_ruta": [
+          "R1",
+          "R3",
+          "R5"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 119.16,
+        "tiempo2": 114.99000000000001,
+        "tiempo_total": 119.16
+      },
+      {
+        "rescatista1_ruta": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "rescatista2_ruta": [
+          "R4",
+          "R5",
+          "R6"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 106.67,
+        "tiempo2": 119.17,
+        "tiempo_total": 119.17
+      },
+      {
+        "rescatista1_ruta": [
+          "R1",
+          "R3",
+          "R2"
+        ],
+        "rescatista2_ruta": [
+          "R4",
+          "R5",
+          "R6"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 110.83,
+        "tiempo2": 119.17,
+        "tiempo_total": 119.17
+      },
+      {
+        "rescatista1_ruta": [
+          "R2",
+          "R1",
+          "R3"
+        ],
+        "rescatista2_ruta": [
+          "R4",
+          "R5",
+          "R6"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 115.0,
+        "tiempo2": 119.17,
+        "tiempo_total": 119.17
+      },
+      {
+        "rescatista1_ruta": [
+          "R2",
+          "R3",
+          "R1"
+        ],
+        "rescatista2_ruta": [
+          "R4",
+          "R5",
+          "R6"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 115.0,
+        "tiempo2": 119.17,
+        "tiempo_total": 119.17
+      }
+    ],
+    "total_evaluadas": 3600,
+    "resumen_estadisticas": {
+      "tiempo_minimo": 119.16,
+      "tiempo_maximo": 237.51,
+      "tiempo_promedio": 177.13,
+      "desviacion_estandar": 29.77,
+      "total_resultados": 3600
+    }
+  },
+  "estrategias_deterministicas": {
+    "A": {
+      "nombre": "A - Izq/Der",
+      "rescatista1_ruta": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "rescatista2_ruta": [
+        "R4",
+        "R5",
+        "R6"
+      ],
+      "tiempo1": 106.67,
+      "tiempo2": 119.17,
+      "tiempo_total": 119.17
+    },
+    "B": {
+      "nombre": "B - Más cercano primero",
+      "rescatista1_ruta": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "rescatista2_ruta": [
+        "R4",
+        "R5",
+        "R6"
+      ],
+      "tiempo1": 106.67,
+      "tiempo2": 119.17,
+      "tiempo_total": 119.17
+    },
+    "C": {
+      "nombre": "C - Más lejano primero",
+      "rescatista1_ruta": [
+        "R6",
+        "R5",
+        "R4"
+      ],
+      "rescatista2_ruta": [
+        "R3",
+        "R2",
+        "R1"
+      ],
+      "tiempo1": 127.51,
+      "tiempo2": 115.01,
+      "tiempo_total": 127.51
+    },
+    "D": {
+      "nombre": "D - Equilibrado por distancia",
+      "rescatista1_ruta": [
+        "R1",
+        "R4",
+        "R5"
+      ],
+      "rescatista2_ruta": [
+        "R2",
+        "R3",
+        "R6"
+      ],
+      "tiempo1": 115.0,
+      "tiempo2": 119.17,
+      "tiempo_total": 119.17
+    },
+    "E": {
+      "nombre": "E - Optimizado manualmente",
+      "rescatista1_ruta": [
+        "R1",
+        "R6",
+        "R2"
+      ],
+      "rescatista2_ruta": [
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "tiempo1": 135.82999999999998,
+      "tiempo2": 115.01,
+      "tiempo_total": 135.82999999999998
+    }
+  },
+  "simulacion_monte_carlo": {
+    "A": {
+      "estrategia": "A - Izq/Der",
+      "num_simulaciones": 100,
+      "tiempo_promedio": 117.3334019025754,
+      "desviacion_estandar": 10.17395224040888,
+      "tiempo_minimo": 98.21142341917462,
+      "tiempo_maximo": 136.7163119490907,
+      "percentil_5": 102.47289374129329,
+      "percentil_95": 133.643130489695
+    },
+    "B": {
+      "estrategia": "B - Más cercano primero",
+      "num_simulaciones": 100,
+      "tiempo_promedio": 117.79774100468175,
+      "desviacion_estandar": 10.139721647191388,
+      "tiempo_minimo": 99.20459527183391,
+      "tiempo_maximo": 135.6091995690666,
+      "percentil_5": 102.97662235114902,
+      "percentil_95": 133.03332200602674
+    },
+    "D": {
+      "estrategia": "D - Equilibrado por distancia",
+      "num_simulaciones": 100,
+      "tiempo_promedio": 117.63258435347566,
+      "desviacion_estandar": 10.378788439533386,
+      "tiempo_minimo": 98.64688852298082,
+      "tiempo_maximo": 136.85623093007868,
+      "percentil_5": 100.49831133326269,
+      "percentil_95": 134.15618835674914
+    },
+    "C": {
+      "estrategia": "C - Más lejano primero",
+      "num_simulaciones": 100,
+      "tiempo_promedio": 125.36629875841956,
+      "desviacion_estandar": 11.08295599923223,
+      "tiempo_minimo": 106.80494653007457,
+      "tiempo_maximo": 145.15506334761065,
+      "percentil_5": 108.68169083310731,
+      "percentil_95": 143.02401000666075
+    },
+    "E": {
+      "estrategia": "E - Optimizado manualmente",
+      "num_simulaciones": 100,
+      "tiempo_promedio": 133.96288052411214,
+      "desviacion_estandar": 9.808491756815664,
+      "tiempo_minimo": 117.34891560862724,
+      "tiempo_maximo": 152.45899690567643,
+      "percentil_5": 119.0016005711808,
+      "percentil_95": 149.0467431977723
+    }
+  },
+  "parametros": {
+    "tiempo_busqueda": 30,
+    "velocidad_rescatistas": 1.2,
+    "distancias_fisicas": {
+      "Start": 0,
+      "R1": 10,
+      "R2": 15,
+      "R3": 20,
+      "R4": 25,
+      "R5": 30,
+      "R6": 35
+    },
+    "cuartos": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6"
+    ],
+    "num_rescatistas": 2,
+    "justificacion_velocidad": "Velocidad promedio en interiores según protocolos FEMA para movimiento seguro en espacios con posibles obstáculos",
+    "justificacion_tiempo": "Tiempo estándar para búsqueda visual rápida según NFPA 1670"
+  }
+}

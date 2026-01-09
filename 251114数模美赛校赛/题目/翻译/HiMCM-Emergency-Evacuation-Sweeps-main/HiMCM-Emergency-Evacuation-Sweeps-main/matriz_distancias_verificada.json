@@ -1,0 +1,83 @@
+{
+  "parametros": {
+    "velocidad_rescatistas": 1.2,
+    "tiempo_busqueda": 30,
+    "distancias_fisicas": {
+      "Start": 0,
+      "R1": 10,
+      "R2": 15,
+      "R3": 20,
+      "R4": 25,
+      "R5": 30,
+      "R6": 35
+    },
+    "justificacion_velocidad": "Velocidad promedio en interiores según protocolos FEMA",
+    "justificacion_tiempo": "Tiempo estándar para búsqueda visual rápida según NFPA 1670"
+  },
+  "matriz_tiempos": {
+    "Start": {
+      "Start": 0,
+      "R1": 8.33,
+      "R2": 12.5,
+      "R3": 16.67,
+      "R4": 20.83,
+      "R5": 25.0,
+      "R6": 29.17
+    },
+    "R1": {
+      "Start": 8.33,
+      "R1": 0,
+      "R2": 4.17,
+      "R3": 8.33,
+      "R4": 12.5,
+      "R5": 16.67,
+      "R6": 20.83
+    },
+    "R2": {
+      "Start": 12.5,
+      "R1": 4.17,
+      "R2": 0,
+      "R3": 4.17,
+      "R4": 8.33,
+      "R5": 12.5,
+      "R6": 16.67
+    },
+    "R3": {
+      "Start": 16.67,
+      "R1": 8.33,
+      "R2": 4.17,
+      "R3": 0,
+      "R4": 4.17,
+      "R5": 8.33,
+      "R6": 12.5
+    },
+    "R4": {
+      "Start": 20.83,
+      "R1": 12.5,
+      "R2": 8.33,
+      "R3": 4.17,
+      "R4": 0,
+      "R5": 4.17,
+      "R6": 8.33
+    },
+    "R5": {
+      "Start": 25.0,
+      "R1": 16.67,
+      "R2": 12.5,
+      "R3": 8.33,
+      "R4": 4.17,
+      "R5": 0,
+      "R6": 4.17
+    },
+    "R6": {
+      "Start": 29.17,
+      "R1": 20.83,
+      "R2": 16.67,
+      "R3": 12.5,
+      "R4": 8.33,
+      "R5": 4.17,
+      "R6": 0
+    }
+  },
+  "unidades": "segundos"
+}

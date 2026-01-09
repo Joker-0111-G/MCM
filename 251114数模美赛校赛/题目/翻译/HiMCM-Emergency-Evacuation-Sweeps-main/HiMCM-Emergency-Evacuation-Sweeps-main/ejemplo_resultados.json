@@ -1,0 +1,576 @@
+{
+  "uso_basico": {
+    "mejor": {
+      "rescatista1_ruta": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "rescatista2_ruta": [
+        "R6",
+        "R5",
+        "R4"
+      ],
+      "rescatista1_cuartos": 3,
+      "rescatista2_cuartos": 3,
+      "tiempo1": 110,
+      "tiempo2": 113,
+      "tiempo_total": 113
+    },
+    "top_10": [
+      {
+        "rescatista1_ruta": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "rescatista2_ruta": [
+          "R6",
+          "R5",
+          "R4"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 110,
+        "tiempo2": 113,
+        "tiempo_total": 113
+      },
+      {
+        "rescatista1_ruta": [
+          "R1",
+          "R3",
+          "R2"
+        ],
+        "rescatista2_ruta": [
+          "R6",
+          "R5",
+          "R4"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 112,
+        "tiempo2": 113,
+        "tiempo_total": 113
+      },
+      {
+        "rescatista1_ruta": [
+          "R3",
+          "R2",
+          "R1"
+        ],
+        "rescatista2_ruta": [
+          "R6",
+          "R5",
+          "R4"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 112,
+        "tiempo2": 113,
+        "tiempo_total": 113
+      },
+      {
+        "rescatista1_ruta": [
+          "R6",
+          "R1",
+          "R2"
+        ],
+        "rescatista2_ruta": [
+          "R3",
+          "R4",
+          "R5"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 112,
+        "tiempo2": 113,
+        "tiempo_total": 113
+      },
+      {
+        "rescatista1_ruta": [
+          "R1",
+          "R6",
+          "R5"
+        ],
+        "rescatista2_ruta": [
+          "R3",
+          "R2",
+          "R4"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 112,
+        "tiempo2": 113,
+        "tiempo_total": 113
+      },
+      {
+        "rescatista1_ruta": [
+          "R3",
+          "R2",
+          "R4"
+        ],
+        "rescatista2_ruta": [
+          "R1",
+          "R6",
+          "R5"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 113,
+        "tiempo2": 112,
+        "tiempo_total": 113
+      },
+      {
+        "rescatista1_ruta": [
+          "R3",
+          "R4",
+          "R5"
+        ],
+        "rescatista2_ruta": [
+          "R6",
+          "R1",
+          "R2"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 113,
+        "tiempo2": 112,
+        "tiempo_total": 113
+      },
+      {
+        "rescatista1_ruta": [
+          "R6",
+          "R5",
+          "R4"
+        ],
+        "rescatista2_ruta": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 113,
+        "tiempo2": 110,
+        "tiempo_total": 113
+      },
+      {
+        "rescatista1_ruta": [
+          "R6",
+          "R5",
+          "R4"
+        ],
+        "rescatista2_ruta": [
+          "R1",
+          "R3",
+          "R2"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 113,
+        "tiempo2": 112,
+        "tiempo_total": 113
+      },
+      {
+        "rescatista1_ruta": [
+          "R6",
+          "R5",
+          "R4"
+        ],
+        "rescatista2_ruta": [
+          "R3",
+          "R2",
+          "R1"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 113,
+        "tiempo2": 112,
+        "tiempo_total": 113
+      }
+    ],
+    "total_evaluadas": 3600,
+    "resumen_estadisticas": {
+      "tiempo_minimo": 113,
+      "tiempo_maximo": 214,
+      "tiempo_promedio": 166.0288888888889,
+      "desviacion_estandar": 28.94416557767134,
+      "total_resultados": 3600
+    }
+  },
+  "uso_completo": {
+    "optimizacion": {
+      "mejor": {
+        "rescatista1_ruta": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "rescatista2_ruta": [
+          "R6",
+          "R5",
+          "R4"
+        ],
+        "rescatista1_cuartos": 3,
+        "rescatista2_cuartos": 3,
+        "tiempo1": 110,
+        "tiempo2": 113,
+        "tiempo_total": 113
+      },
+      "top_10": [
+        {
+          "rescatista1_ruta": [
+            "R1",
+            "R2",
+            "R3"
+          ],
+          "rescatista2_ruta": [
+            "R6",
+            "R5",
+            "R4"
+          ],
+          "rescatista1_cuartos": 3,
+          "rescatista2_cuartos": 3,
+          "tiempo1": 110,
+          "tiempo2": 113,
+          "tiempo_total": 113
+        },
+        {
+          "rescatista1_ruta": [
+            "R1",
+            "R3",
+            "R2"
+          ],
+          "rescatista2_ruta": [
+            "R6",
+            "R5",
+            "R4"
+          ],
+          "rescatista1_cuartos": 3,
+          "rescatista2_cuartos": 3,
+          "tiempo1": 112,
+          "tiempo2": 113,
+          "tiempo_total": 113
+        },
+        {
+          "rescatista1_ruta": [
+            "R3",
+            "R2",
+            "R1"
+          ],
+          "rescatista2_ruta": [
+            "R6",
+            "R5",
+            "R4"
+          ],
+          "rescatista1_cuartos": 3,
+          "rescatista2_cuartos": 3,
+          "tiempo1": 112,
+          "tiempo2": 113,
+          "tiempo_total": 113
+        },
+        {
+          "rescatista1_ruta": [
+            "R6",
+            "R1",
+            "R2"
+          ],
+          "rescatista2_ruta": [
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "rescatista1_cuartos": 3,
+          "rescatista2_cuartos": 3,
+          "tiempo1": 112,
+          "tiempo2": 113,
+          "tiempo_total": 113
+        },
+        {
+          "rescatista1_ruta": [
+            "R1",
+            "R6",
+            "R5"
+          ],
+          "rescatista2_ruta": [
+            "R3",
+            "R2",
+            "R4"
+          ],
+          "rescatista1_cuartos": 3,
+          "rescatista2_cuartos": 3,
+          "tiempo1": 112,
+          "tiempo2": 113,
+          "tiempo_total": 113
+        },
+        {
+          "rescatista1_ruta": [
+            "R3",
+            "R2",
+            "R4"
+          ],
+          "rescatista2_ruta": [
+            "R1",
+            "R6",
+            "R5"
+          ],
+          "rescatista1_cuartos": 3,
+          "rescatista2_cuartos": 3,
+          "tiempo1": 113,
+          "tiempo2": 112,
+          "tiempo_total": 113
+        },
+        {
+          "rescatista1_ruta": [
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "rescatista2_ruta": [
+            "R6",
+            "R1",
+            "R2"
+          ],
+          "rescatista1_cuartos": 3,
+          "rescatista2_cuartos": 3,
+          "tiempo1": 113,
+          "tiempo2": 112,
+          "tiempo_total": 113
+        },
+        {
+          "rescatista1_ruta": [
+            "R6",
+            "R5",
+            "R4"
+          ],
+          "rescatista2_ruta": [
+            "R1",
+            "R2",
+            "R3"
+          ],
+          "rescatista1_cuartos": 3,
+          "rescatista2_cuartos": 3,
+          "tiempo1": 113,
+          "tiempo2": 110,
+          "tiempo_total": 113
+        },
+        {
+          "rescatista1_ruta": [
+            "R6",
+            "R5",
+            "R4"
+          ],
+          "rescatista2_ruta": [
+            "R1",
+            "R3",
+            "R2"
+          ],
+          "rescatista1_cuartos": 3,
+          "rescatista2_cuartos": 3,
+          "tiempo1": 113,
+          "tiempo2": 112,
+          "tiempo_total": 113
+        },
+        {
+          "rescatista1_ruta": [
+            "R6",
+            "R5",
+            "R4"
+          ],
+          "rescatista2_ruta": [
+            "R3",
+            "R2",
+            "R1"
+          ],
+          "rescatista1_cuartos": 3,
+          "rescatista2_cuartos": 3,
+          "tiempo1": 113,
+          "tiempo2": 112,
+          "tiempo_total": 113
+        }
+      ],
+      "total_evaluadas": 3600,
+      "resumen_estadisticas": {
+        "tiempo_minimo": 113,
+        "tiempo_maximo": 214,
+        "tiempo_promedio": 166.0288888888889,
+        "desviacion_estandar": 28.94416557767134,
+        "total_resultados": 3600
+      }
+    },
+    "estrategias": {
+      "A": {
+        "nombre": "A - Izq/Der",
+        "rescatista1_ruta": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "rescatista2_ruta": [
+          "R4",
+          "R5",
+          "R6"
+        ],
+        "tiempo1": 110,
+        "tiempo2": 119,
+        "tiempo_total": 119
+      },
+      "B": {
+        "nombre": "B - Más cercano primero",
+        "rescatista1_ruta": [
+          "R1",
+          "R6",
+          "R3"
+        ],
+        "rescatista2_ruta": [
+          "R5",
+          "R2",
+          "R4"
+        ],
+        "tiempo1": 118,
+        "tiempo2": 118,
+        "tiempo_total": 118
+      },
+      "C": {
+        "nombre": "C - Más lejano primero",
+        "rescatista1_ruta": [
+          "R4",
+          "R2",
+          "R5"
+        ],
+        "rescatista2_ruta": [
+          "R3",
+          "R6",
+          "R1"
+        ],
+        "tiempo1": 122,
+        "tiempo2": 120,
+        "tiempo_total": 122
+      },
+      "D": {
+        "nombre": "D - Equilibrado por distancia",
+        "rescatista1_ruta": [
+          "R1",
+          "R4",
+          "R5"
+        ],
+        "rescatista2_ruta": [
+          "R2",
+          "R3",
+          "R6"
+        ],
+        "tiempo1": 117,
+        "tiempo2": 121,
+        "tiempo_total": 121
+      },
+      "E": {
+        "nombre": "E - Optimizado manualmente",
+        "rescatista1_ruta": [
+          "R1",
+          "R6",
+          "R2"
+        ],
+        "rescatista2_ruta": [
+          "R3",
+          "R4",
+          "R5"
+        ],
+        "tiempo1": 115,
+        "tiempo2": 113,
+        "tiempo_total": 115
+      }
+    },
+    "monte_carlo": {
+      "estrategia": "E - Optimizado manualmente",
+      "num_simulaciones": 500,
+      "tiempo_promedio": 113.92412745244106,
+      "desviacion_estandar": 10.35703098627126,
+      "tiempo_minimo": 95.07994250702147,
+      "tiempo_maximo": 132.0131189420812,
+      "percentil_5": 97.7991858393913,
+      "percentil_95": 129.53805789456587
+    }
+  },
+  "analisis_comparativo": [
+    {
+      "tiempo_busqueda": 20,
+      "tiempo_optimo": 83,
+      "estrategia_optima": {
+        "r1": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "r2": [
+          "R6",
+          "R5",
+          "R4"
+        ]
+      }
+    },
+    {
+      "tiempo_busqueda": 25,
+      "tiempo_optimo": 98,
+      "estrategia_optima": {
+        "r1": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "r2": [
+          "R6",
+          "R5",
+          "R4"
+        ]
+      }
+    },
+    {
+      "tiempo_busqueda": 30,
+      "tiempo_optimo": 113,
+      "estrategia_optima": {
+        "r1": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "r2": [
+          "R6",
+          "R5",
+          "R4"
+        ]
+      }
+    },
+    {
+      "tiempo_busqueda": 35,
+      "tiempo_optimo": 128,
+      "estrategia_optima": {
+        "r1": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "r2": [
+          "R6",
+          "R5",
+          "R4"
+        ]
+      }
+    },
+    {
+      "tiempo_busqueda": 40,
+      "tiempo_optimo": 143,
+      "estrategia_optima": {
+        "r1": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "r2": [
+          "R6",
+          "R5",
+          "R4"
+        ]
+      }
+    }
+  ]
+}

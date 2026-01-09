@@ -1,0 +1,55 @@
+{
+  "mejor_solucion": {
+    "rescatista1_ruta": [
+      "R1",
+      "R3",
+      "R5"
+    ],
+    "rescatista2_ruta": [
+      "R2",
+      "R4",
+      "R6"
+    ],
+    "rescatista1_cuartos": 3,
+    "rescatista2_cuartos": 3,
+    "tiempo1": 114.99000000000001,
+    "tiempo2": 119.16,
+    "tiempo_total": 119.16
+  },
+  "estadisticas": {
+    "tiempo_minimo": 119.16,
+    "tiempo_maximo": 237.51,
+    "tiempo_promedio": 177.13,
+    "desviacion_estandar": 29.77,
+    "total_resultados": 3600
+  },
+  "mejor_estrategia": {
+    "nombre": "A - Izq/Der",
+    "rescatista1_ruta": [
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "rescatista2_ruta": [
+      "R4",
+      "R5",
+      "R6"
+    ],
+    "tiempo1": 106.67,
+    "tiempo2": 119.17,
+    "tiempo_total": 119.17
+  },
+  "parametros_usados": {
+    "velocidad_rescatistas": 1.2,
+    "tiempo_busqueda": 30,
+    "distancias_fisicas": {
+      "Start": 0,
+      "R1": 10,
+      "R2": 15,
+      "R3": 20,
+      "R4": 25,
+      "R5": 30,
+      "R6": 35
+    }
+  }
+}

@@ -1,0 +1,772 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+<span class="hljs-selector-tag">table</span> {
+  <span class="hljs-attribute">border-collapse</span>: collapse;
+  <span class="hljs-attribute">border</span>: none;
+}
+<span class="hljs-selector-tag">table</span> <span class="hljs-selector-tag">td</span>, <span class="hljs-selector-tag">table</span> <span class="hljs-selector-tag">th</span> {
+  <span class="hljs-attribute">border</span>: none;
+}
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>思路</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='建筑应急疏散清扫策略的优化建模与执行方法'><span>建筑应急疏散清扫策略的优化建模与执行方法</span></h1><p>&nbsp;</p><p>&nbsp;</p><h2 id='第一部分问题的形式化定义与关键要素量化'><span>第一部分：问题的形式化定义与关键要素量化</span></h2><p>&nbsp;</p><p>&nbsp;</p><h3 id='11-引言清扫疏散问题的运筹学挑战'><span>1.1 引言：清扫疏散问题的运筹学挑战</span></h3><p>&nbsp;</p><p><span>在火灾或气体泄漏等紧急情况下，对建筑进行快速、有序的疏散清扫是拯救生命的关键 。响应者（如消防员）必须系统地清扫建筑内的所有区域和房间，以确保所有居住者均已安全撤离 。此过程的效率和策略直接决定了人员的最终安全。  </span></p><p><span>XATU 委员会（Clearing Of Multi-use Assembly Public/Private spaces）提出的挑战，是设计一个数学模型来优化多楼层建筑中的清扫策略 。该问题的核心是一个复杂的多目标优化问题，旨在：  </span></p><ol><li><p><strong><span>最小化总清扫时间 (Makespan)：</span></strong><span> 在最短的时间内清扫所有房间 。  </span></p></li><li><p><strong><span>最大化居住者安全：</span></strong><span> 优先处理高风险区域 。  </span></p></li><li><p><strong><span>最大化响应者效率：</span></strong><span> 优化响应者的路径和任务分配 。  </span></p></li></ol><p><span>本报告旨在构建一个可量化、可执行的数学建模框架，以系统性地解决这一运筹学挑战。</span></p><p>&nbsp;</p><h3 id='12-关键要素的识别与参数化'><span>1.2 关键要素的识别与参数化</span></h3><p>&nbsp;</p><p><span>为了构建一个有效的数学模型，必须首先将问题描述 中的定性“关键元素”转化为模型可以使用的定量参数。  </span></p><p><strong><span>清扫验证 (Sweep Verification) 标准</span></strong><span> 清扫验证是确认一个区域“全部清除”(all-clear) 的过程 。消防员的标准作业程序 (SOPs) 要求响应者进行“系统性的”搜寻 ，包括“检查门后”、使用热成像摄像机 (TIC)“扫描房间”，并最终报告“全部清除”。  </span></p><ul><li><p><strong><span>模型参数 (</span><span>*</span><span>T</span><span>*</span><em><span>s</span><span>*</span></em><span>w</span><span>*</span><em><span>ee</span><span>*</span></em><span>p</span><span>*</span><span>):</span></strong><span> “清扫验证”被量化为完成单个房间清扫所需的总时间 </span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>。此时间可进一步分解为：</span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>=</span><em><span>T</span><strong><span>e</span></strong><span>n</span><strong><span>t</span></strong><span>ry</span></em><span>+</span><em><span>T</span><strong><span>se</span></strong><span>a</span><strong><span>rc</span></strong><span>h</span></em><span>+</span><em><span>T</span><strong><span>v</span></strong><span>er</span><strong><span>i</span></strong><span>f**y</span></em><span>。</span></p><ul><li><p><em><span>T</span><strong><span>e</span></strong><span>n</span><strong><span>t</span></strong><span>ry</span></em><span>：处理入口的时间，例如消防员 SOP 中规定的检查门的热源 。  </span></p></li><li><p><em><span>T</span><strong><span>se</span></strong><span>a</span><strong><span>rc</span></strong><span>h</span></em><span>：两人小组（SOP 规定的最少人数 ）进行系统性搜索和扫描的时间。  </span></p></li><li><p><em><span>T</span><strong><span>v</span></strong><span>er</span><strong><span>i</span></strong><span>f**y</span></em><span>：标记房间并与指挥中心通信确认的时间 。  </span></p></li></ul></li></ul><p><strong><span>响应者 (Responder) 能力</span></strong><span> 响应者包括消防员、警察、安保人员等 。  </span></p><ul><li><p><strong><span>模型参数 (</span><span>*</span><span>K</span><span>*</span><span>, </span><span>*</span><span>v</span><span>*</span><em><span>m</span><span>*</span></em><span>o</span><span>*</span><em><span>v</span><span>*</span></em><span>e</span><span>*</span><span>):</span></strong></p><ul><li><p><em><span>K</span></em><span>：响应者（或响应者小组）的总数，作为模型的输入变量。</span></p></li><li><p><em><span>v</span><strong><span>m</span></strong><span>o</span><strong><span>v</span></strong><span>e</span></em><span>：响应者在特定条件下的平均移动速度（例如，携带装备、在烟雾中）。</span></p></li></ul></li></ul><p><strong><span>冗余度 (Redundancy)</span></strong><span> 冗余度被定义为“故意的重叠”或“重新检查” 。例如，SOPs 中提到“由不同于主搜索小组的人员进行二次搜索” 。  </span></p><ul><li><p><strong><span>模型参数 (</span><span>*</span><span>ρ</span><span>*</span><span>):</span></strong></p><ul><li><p><em><span>ρ</span></em><span>：一个策略参数。</span><em><span>ρ</span></em><span>=1 表示无冗余（单次清扫）。</span><em><span>ρ</span></em><span>=2 表示完全冗余（所有房间清扫两次）。本模型将首先求解 </span><em><span>ρ</span></em><span>=1 的情况。</span></p></li></ul></li></ul><p><strong><span>建筑与居住者分类 (Occupancy Types)</span></strong><span> 问题明确要求区分不同类型的居住者，如“儿童日托中心”、“办公空间”和“仓库” 。这三类在布局、风险和疏散程序上存在显著差异 。居住者类型是驱动模型参数变化的最关键的外生变量。  </span></p><ol><li><p><strong><span>日托中心 (Daycare):</span></strong></p><ul><li><p><strong><span>特征:</span></strong><span> 居住者（儿童）无法自主行动，需要辅助疏散 。NFPA（美国国家消防协会）等机构对此类场所有极其严格的消防安全规定 。  </span></p></li><li><p><strong><span>模型影响:</span></strong><span> 这类区域具有最高的</span><em><span>优先级</span></em><span> 。</span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span> 不再是“搜索”，而是“搜索并救援”，导致清扫时间急剧增加且高度可变。  </span></p></li></ul></li><li><p><strong><span>仓库 (Warehouse):</span></strong></p><ul><li><p><strong><span>特征:</span></strong><span> 布局通常是“迷宫式”的 ，并包含“高架存储” (high-rack storage) 。  </span></p></li><li><p><strong><span>模型影响:</span></strong><span> 建筑的图拓扑结构变得极其复杂 。</span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span> 也显著增加，因为搜索高架货架（可能需要垂直搜索）远比搜索办公室困难 。  </span></p></li></ul></li><li><p><strong><span>办公室 (Office):</span></strong></p><ul><li><p><strong><span>特征:</span></strong><span> 布局相对简单（如图1 ），居住者为成年人，可自主行动。  </span></p></li><li><p><strong><span>模型影响:</span></strong><span> 这是模型的基线情景，具有标准的 </span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span> 和较低的优先级。</span></p></li></ul></li></ol><p>&nbsp;</p><h3 id='13-关键模型参数变量与假设定义表'><span>1.3 关键模型参数、变量与假设定义表</span></h3><p>&nbsp;</p><p><span>下表 1.1 总结了将上述要素形式化后的核心模型参数，这是连接问题理解 (Req 1) 和模型构建 (Req 2) 的基石。</span></p><p><strong><span>表 1.1：关键模型参数、变量与假设定义表</span></strong></p><figure class='table-figure'><table><thead><tr><th><span>符号</span></th><th><span>定义</span></th><th><span>类型</span></th><th><span>来源/假设 (相关文献)</span></th></tr></thead><tbody><tr><td><em><span>K</span></em></td><td><span>响应者（代理）集合, </span><em><span>K</span></em><span>={1,...,</span><em><span>k</span></em><span>}</span></td><td><span>输入</span></td><td><span>响应者数量 </span></td></tr><tr><td><em><span>G</span></em><span>(</span><em><span>V</span></em><span>,</span><em><span>E</span></em><span>)</span></td><td><span>建筑图，</span><em><span>V</span></em><span>=节点, </span><em><span>E</span></em><span>=边</span></td><td><span>结构</span></td><td><span>建筑平面图 </span></td></tr><tr><td><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em></td><td><span>任务节点集合（需清扫的房间）</span></td><td><span>集合</span></td><td><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span>⊂</span><em><span>V</span></em><span> </span></td></tr><tr><td><em><span>V</span><strong><span>s</span></strong><span>t</span><strong><span>a</span></strong><span>r**t</span></em></td><td><span>响应者起始节点集合</span></td><td><span>集合</span></td><td><span>响应者起始位置 </span></td></tr><tr><td><em><span>w</span></em><span>(</span><em><span>e</span></em><span>)</span></td><td><span>边 </span><em><span>e</span></em><span> 的遍历时间（成本），</span><em><span>w</span></em><span>(</span><em><span>e</span></em><span>)=dist(</span><em><span>e</span></em><span>)/</span><em><span>v</span><strong><span>m</span></strong><span>o</span><strong><span>v</span></strong><span>e</span></em></td><td><span>参数</span></td><td><span>移动时间 </span></td></tr><tr><td><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>(</span><em><span>v</span></em><span>)</span></td><td><span>节点 </span><em><span>v</span></em><span>∈</span><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span> 的清扫时间（服务时间）</span></td><td><span>参数</span></td><td><span>基于 SOPs </span></td></tr><tr><td><em><span>P**i</span></em></td><td><span>节点 </span><em><span>i</span></em><span> 的风险优先级（例如 1=最高, 3=最低）</span></td><td><span>参数</span></td><td><span>基于居住者类型 </span></td></tr><tr><td><em><span>T</span><strong><span>ma</span></strong><span>x</span></em></td><td><span>最大完成时间 (Makespan)，</span><em><span>T</span><strong><span>ma</span></strong><span>x</span></em><span>=max</span><em><span>k</span></em><span>∈</span><em><span>K</span></em><span>(</span><em><span>T**k</span></em><span>)</span></td><td><strong><span>目标</span></strong></td><td><span>最小化总时间 </span></td></tr></tbody></table></figure><p><span> </span></p><p>&nbsp;</p><h2 id='第二部分核心清扫模型-csm基于-min-max-m-tsp-的构建'><span>第二部分：核心清扫模型 (CSM)：基于 Min-Max m-TSP 的构建</span></h2><p>&nbsp;</p><p>&nbsp;</p><h3 id='21-图论表示法将建筑布局抽象为加权图-g=vew'><span>2.1 图论表示法：将建筑布局抽象为加权图 </span><em><span>G</span></em><span>=(</span><em><span>V</span></em><span>,</span><em><span>E</span></em><span>,</span><em><span>W</span></em><span>)</span></h3><p>&nbsp;</p><p><span>为应用数学优化，我们首先将建筑布局抽象为一个加权图 </span><em><span>G</span></em><span>=(</span><em><span>V</span></em><span>,</span><em><span>E</span></em><span>,</span><em><span>W</span></em><span>)。</span></p><ul><li><p><em><strong><span>V</span><span>*</span><span> (顶点):</span></strong><span> 节点集。</span></em><span>V</span><em><span>=</span></em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span><em><span>∪</span></em><span>V</span><strong><span>t</span></strong><span>r</span><strong><span>an</span></strong><span>s</span><strong><span>i</span></strong><span>t</span><em><span>∪</span></em><span>V</span><strong><span>e</span></strong><span>x</span><strong><span>i</span></strong><span>t*。</span></p><ul><li><p><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span>：需要清扫的任务节点（例如，办公室1-6）。</span></p></li><li><p><em><span>V</span><strong><span>t</span></strong><span>r</span><strong><span>an</span></strong><span>s</span><strong><span>i</span></strong><span>t</span></em><span>：用于移动的连接点（例如，走廊分段、楼梯间）。</span></p></li><li><p><em><span>V</span><strong><span>e</span></strong><span>x</span><strong><span>i</span></strong><span>t</span></em><span>：出口或响应者的起始点（例如，Exit 1, Exit 2）。</span></p></li></ul></li><li><p><span>*</span><strong><span>E</span><span>*</span><span> (边):</span></strong><span> 边集。代表门、走廊、楼梯等物理连接。</span></p></li><li><p><span>*</span><strong><span>W</span><span>*</span><span> (权重):</span></strong><span> 这是一个混合加权图，成本（时间）同时存在于节点和边上。</span></p><ul><li><p><strong><span>边权重 </span><span>*</span><span>W</span><span>*</span><span>(</span><span>*</span><span>e</span><span>*</span><span>):</span></strong><span> 遍历成本。例如 </span><em><span>T</span><strong><span>ha</span></strong><span>ll</span></em><span>（穿越走廊分段的时间），</span><em><span>w</span></em><span>(</span><em><span>e</span></em><span>)=dist(</span><em><span>e</span></em><span>)/</span><em><span>v</span><strong><span>m</span></strong><span>o</span><strong><span>v</span></strong><span>e</span></em><span>。</span></p></li><li><p><strong><span>节点权重 </span><span>*</span><span>W</span><span>*</span><span>(</span><span>*</span><span>v</span><span>*</span><span>):</span></strong><span> 任务成本。例如 </span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>(</span><em><span>v</span></em><span>)（清扫房间的时间）。当响应者“访问”一个任务节点 </span><em><span>v</span></em><span> 时，必须支付此时间成本。</span></p></li></ul></li></ul><p><span>标准的旅行商问题 (TSP) 通常只考虑边权重。我们的模型必须将 </span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span> 作为访问节点 </span><em><span>v</span></em><span> 时产生的</span><em><span>服务时间</span></em><span> (Service Time) 纳入总成本。</span></p><p>&nbsp;</p><h3 id='22-数学规划模型的构建最小-最大-m-tsp-min-max-m-tsp'><span>2.2 数学规划模型的构建：最小-最大 m-TSP (Min-Max m-TSP)</span></h3><p>&nbsp;</p><p><strong><span>问题识别：</span></strong><span> 目标是“在最短的时间内清扫所有房间” 。当有多名响应者 (K &gt; 1) 时，这等同于最小化</span><em><span>最后一名</span></em><span>响应者完成其任务的时间，即最小化最大完成时间 (Makespan)。这在运筹学中被称为</span><strong><span>最小-最大多重旅行商问题 (Min-Max Multiple Traveling Salesman Problem, m-TSP)</span></strong><span> 。  </span></p><p><strong><span>核心公式：</span></strong><span> 目标函数是 </span><em><span>P</span></em><span>∗=argmin</span><em><span>P</span></em><span>max(</span><em><span>T</span></em><span>(</span><em><span>P</span></em><span>))，其中 </span><em><span>T</span></em><span>(</span><em><span>P</span></em><span>) 是路径 </span><em><span>P</span></em><span> 的总时间 。  </span></p><p><strong><span>变量定义：</span></strong></p><ul><li><p><em><span>K</span></em><span>：响应者集合。</span></p></li><li><p><em><span>V</span></em><span>：所有节点集合；</span><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span>：任务节点集合。</span></p></li><li><p><em><span>x</span><strong><span>ij</span></strong><span>k</span></em><span>：二元变量。如果响应者 </span><em><span>k</span></em><span> 从节点 </span><em><span>i</span></em><span> 移动到节点 </span><em><span>j</span></em><span>，则为 1，否则为 0。</span></p></li><li><p><em><span>y</span><strong><span>i</span></strong><span>k</span></em><span>：二元变量。如果响应者 </span><em><span>k</span></em><span> 访问（清扫）了任务节点 </span><em><span>i</span></em><span>，则为 1，否则为 0。</span></p></li><li><p><em><span>w</span></em><span>(</span><em><span>i</span></em><span>,</span><em><span>j</span></em><span>)：从节点 </span><em><span>i</span></em><span> 移动到节点 </span><em><span>j</span></em><span> 的时间成本（边权重）。</span></p></li><li><p><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>(</span><em><span>i</span></em><span>)：清扫任务节点 </span><em><span>i</span></em><span> 的时间成本（节点权重）。</span></p></li><li><p><em><span>T**k</span></em><span>：响应者 </span><em><span>k</span></em><span> 的总路径时间。</span></p></li><li><p><em><span>T</span><strong><span>ma</span></strong><span>x</span></em><span>：所有响应者中的最大总时间 (Makespan)。</span></p></li></ul><p><strong><span>目标函数：</span></strong></p><p><span>Minimize</span><em><span>T</span><strong><span>ma</span></strong><span>x</span></em></p><p><strong><span>约束条件 (Constraints)：</span></strong></p><ol><li><p><strong><span>任务覆盖 (Task Coverage):</span></strong><span> 每个任务节点必须被</span><em><span>至少</span></em><span>一个响应者访问（清扫）。</span></p><p><em><span>k</span></em><span>∈</span><em><span>K</span></em><span>∑</span><em><span>y</span><strong><span>i</span></strong><span>k</span></em><span>≥1∀</span><em><span>i</span></em><span>∈</span><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em></p></li><li><p><strong><span>路径连续性 (Flow Conservation):</span></strong><span> 响应者进入一个节点（非起点/终点）必须离开。 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="55.218ex" height="2.921ex" role="img" focusable="false" viewBox="0 -853.7 24406.4 1291.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.99ex;"><defs><path id="MJX-215-TEX-SO-2211" d="M61 748Q64 750 489 750H913L954 640Q965 609 976 579T993 533T999 516H979L959 517Q936 579 886 621T777 682Q724 700 655 705T436 710H319Q183 710 183 709Q186 706 348 484T511 259Q517 250 513 244L490 216Q466 188 420 134T330 27L149 -187Q149 -188 362 -188Q388 -188 436 -188T506 -189Q679 -189 778 -162T936 -43Q946 -27 959 6H999L913 -249L489 -250Q65 -250 62 -248Q56 -246 56 -239Q56 -234 118 -161Q186 -81 245 -11L428 206Q428 207 242 462L57 717L56 728Q56 744 61 748Z"></path><path id="MJX-215-TEX-I-1D457" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"></path><path id="MJX-215-TEX-N-2208" d="M84 250Q84 372 166 450T360 539Q361 539 377 539T419 540T469 540H568Q583 532 583 520Q583 511 570 501L466 500Q355 499 329 494Q280 482 242 458T183 409T147 354T129 306T124 272V270H568Q583 262 583 250T568 230H124V228Q124 207 134 177T167 112T231 48T328 7Q355 1 466 0H570Q583 -10 583 -20Q583 -32 568 -40H471Q464 -40 446 -40T417 -41Q262 -41 172 45Q84 127 84 250Z"></path><path id="MJX-215-TEX-I-1D449" d="M52 648Q52 670 65 683H76Q118 680 181 680Q299 680 320 683H330Q336 677 336 674T334 656Q329 641 325 637H304Q282 635 274 635Q245 630 242 620Q242 618 271 369T301 118L374 235Q447 352 520 471T595 594Q599 601 599 609Q599 633 555 637Q537 637 537 648Q537 649 539 661Q542 675 545 679T558 683Q560 683 570 683T604 682T668 681Q737 681 755 683H762Q769 676 769 672Q769 655 760 640Q757 637 743 637Q730 636 719 635T698 630T682 623T670 615T660 608T652 599T645 592L452 282Q272 -9 266 -16Q263 -18 259 -21L241 -22H234Q216 -22 216 -15Q213 -9 177 305Q139 623 138 626Q133 637 76 637H59Q52 642 52 648Z"></path><path id="MJX-215-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-215-TEX-N-2260" d="M166 -215T159 -215T147 -212T141 -204T139 -197Q139 -190 144 -183L306 133H70Q56 140 56 153Q56 168 72 173H327L406 327H72Q56 332 56 347Q56 360 70 367H426Q597 702 602 707Q605 716 618 716Q625 716 630 712T636 703T638 696Q638 692 471 367H707Q722 359 722 347Q722 336 708 328L451 327L371 173H708Q722 163 722 153Q722 140 707 133H351Q175 -210 170 -212Q166 -215 159 -215Z"></path><path id="MJX-215-TEX-I-1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJX-215-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path id="MJX-215-TEX-I-1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path><path id="MJX-215-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-215-TEX-N-2200" d="M0 673Q0 684 7 689T20 694Q32 694 38 680T82 567L126 451H430L473 566Q483 593 494 622T512 668T519 685Q524 694 538 694Q556 692 556 674Q556 670 426 329T293 -15Q288 -22 278 -22T263 -15Q260 -11 131 328T0 673ZM414 410Q414 411 278 411T142 410L278 55L414 410Z"></path><path id="MJX-215-TEX-I-1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path><path id="MJX-215-TEX-N-2216" d="M56 731Q56 740 62 745T75 750Q85 750 92 740Q96 733 270 255T444 -231Q444 -239 438 -244T424 -250Q414 -250 407 -240Q404 -236 230 242T56 731Z"></path><path id="MJX-215-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path id="MJX-215-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-215-TEX-I-1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path><path id="MJX-215-TEX-I-1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-215-TEX-I-1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path><path id="MJX-215-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-215-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="munder"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-215-TEX-SO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(1089,-285.4) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D457" xlink:href="#MJX-215-TEX-I-1D457"></use></g><g data-mml-node="mo" transform="translate(412,0)"><use data-c="2208" xlink:href="#MJX-215-TEX-N-2208"></use></g><g data-mml-node="mi" transform="translate(1079,0)"><use data-c="1D449" xlink:href="#MJX-215-TEX-I-1D449"></use></g><g data-mml-node="mo" transform="translate(1848,0)"><use data-c="2C" xlink:href="#MJX-215-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(2126,0)"><use data-c="1D457" xlink:href="#MJX-215-TEX-I-1D457"></use></g><g data-mml-node="mo" transform="translate(2538,0)"><use data-c="2260" xlink:href="#MJX-215-TEX-N-2260"></use></g><g data-mml-node="mi" transform="translate(3316,0)"><use data-c="1D456" xlink:href="#MJX-215-TEX-I-1D456"></use></g></g></g><g data-mml-node="msubsup" transform="translate(3894.4,0)"><g data-mml-node="mi"><use data-c="1D465" xlink:href="#MJX-215-TEX-I-1D465"></use></g><g data-mml-node="mi" transform="translate(605,363) scale(0.707)"><use data-c="1D458" xlink:href="#MJX-215-TEX-I-1D458"></use></g><g data-mml-node="TeXAtom" transform="translate(605,-292.2) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-215-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(345,0)"><use data-c="1D457" xlink:href="#MJX-215-TEX-I-1D457"></use></g></g></g><g data-mml-node="mo" transform="translate(5362.4,0)"><use data-c="3D" xlink:href="#MJX-215-TEX-N-3D"></use></g><g data-mml-node="munder" transform="translate(6418.2,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-215-TEX-SO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(1089,-285.4) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D457" xlink:href="#MJX-215-TEX-I-1D457"></use></g><g data-mml-node="mo" transform="translate(412,0)"><use data-c="2208" xlink:href="#MJX-215-TEX-N-2208"></use></g><g data-mml-node="mi" transform="translate(1079,0)"><use data-c="1D449" xlink:href="#MJX-215-TEX-I-1D449"></use></g><g data-mml-node="mo" transform="translate(1848,0)"><use data-c="2C" xlink:href="#MJX-215-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(2126,0)"><use data-c="1D457" xlink:href="#MJX-215-TEX-I-1D457"></use></g><g data-mml-node="mo" transform="translate(2538,0)"><use data-c="2260" xlink:href="#MJX-215-TEX-N-2260"></use></g><g data-mml-node="mi" transform="translate(3316,0)"><use data-c="1D456" xlink:href="#MJX-215-TEX-I-1D456"></use></g></g></g><g data-mml-node="msubsup" transform="translate(10312.6,0)"><g data-mml-node="mi"><use data-c="1D465" xlink:href="#MJX-215-TEX-I-1D465"></use></g><g data-mml-node="mi" transform="translate(605,363) scale(0.707)"><use data-c="1D458" xlink:href="#MJX-215-TEX-I-1D458"></use></g><g data-mml-node="TeXAtom" transform="translate(605,-292.2) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D457" xlink:href="#MJX-215-TEX-I-1D457"></use></g><g data-mml-node="mi" transform="translate(412,0)"><use data-c="1D456" xlink:href="#MJX-215-TEX-I-1D456"></use></g></g></g><g data-mml-node="mstyle" transform="translate(11502.9,0)"><g data-mml-node="mspace"></g></g><g data-mml-node="mi" transform="translate(12502.9,0)"><use data-c="2200" xlink:href="#MJX-215-TEX-N-2200"></use></g><g data-mml-node="mi" transform="translate(13058.9,0)"><use data-c="1D458" xlink:href="#MJX-215-TEX-I-1D458"></use></g><g data-mml-node="mo" transform="translate(13857.7,0)"><use data-c="2208" xlink:href="#MJX-215-TEX-N-2208"></use></g><g data-mml-node="mi" transform="translate(14802.4,0)"><use data-c="1D43E" xlink:href="#MJX-215-TEX-I-1D43E"></use></g><g data-mml-node="mo" transform="translate(15691.4,0)"><use data-c="2C" xlink:href="#MJX-215-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(16136.1,0)"><use data-c="2200" xlink:href="#MJX-215-TEX-N-2200"></use></g><g data-mml-node="mi" transform="translate(16692.1,0)"><use data-c="1D456" xlink:href="#MJX-215-TEX-I-1D456"></use></g><g data-mml-node="mo" transform="translate(17314.9,0)"><use data-c="2208" xlink:href="#MJX-215-TEX-N-2208"></use></g><g data-mml-node="mi" transform="translate(18259.7,0)"><use data-c="1D449" xlink:href="#MJX-215-TEX-I-1D449"></use></g><g data-mml-node="mo" transform="translate(19250.9,0)"><use data-c="2216" xlink:href="#MJX-215-TEX-N-2216"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(19973.1,0)"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D449" xlink:href="#MJX-215-TEX-I-1D449"></use></g><g data-mml-node="TeXAtom" transform="translate(616,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D460" xlink:href="#MJX-215-TEX-I-1D460"></use></g><g data-mml-node="mi" transform="translate(469,0)"><use data-c="1D461" xlink:href="#MJX-215-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(830,0)"><use data-c="1D44E" xlink:href="#MJX-215-TEX-I-1D44E"></use></g><g data-mml-node="mi" transform="translate(1359,0)"><use data-c="1D45F" xlink:href="#MJX-215-TEX-I-1D45F"></use></g><g data-mml-node="mi" transform="translate(1810,0)"><use data-c="1D461" xlink:href="#MJX-215-TEX-I-1D461"></use></g></g></g><g data-mml-node="mo" transform="translate(2201.1,0)"><use data-c="2C" xlink:href="#MJX-215-TEX-N-2C"></use></g><g data-mml-node="msub" transform="translate(2645.8,0)"><g data-mml-node="mi"><use data-c="1D449" xlink:href="#MJX-215-TEX-I-1D449"></use></g><g data-mml-node="TeXAtom" transform="translate(616,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D452" xlink:href="#MJX-215-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(466,0)"><use data-c="1D45B" xlink:href="#MJX-215-TEX-I-1D45B"></use></g><g data-mml-node="mi" transform="translate(1066,0)"><use data-c="1D451" xlink:href="#MJX-215-TEX-I-1D451"></use></g></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><munder><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>j</mi><mo>∈</mo><mi>V</mi><mo>,</mo><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></munder><msubsup><mi>x</mi><mrow data-mjx-texclass="ORD"><mi>i</mi><mi>j</mi></mrow><mi>k</mi></msubsup><mo>=</mo><munder><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>j</mi><mo>∈</mo><mi>V</mi><mo>,</mo><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></munder><msubsup><mi>x</mi><mrow data-mjx-texclass="ORD"><mi>j</mi><mi>i</mi></mrow><mi>k</mi></msubsup><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mi mathvariant="normal">∀</mi><mi>k</mi><mo>∈</mo><mi>K</mi><mo>,</mo><mi mathvariant="normal">∀</mi><mi>i</mi><mo>∈</mo><mi>V</mi><mo>∖</mo><mrow data-mjx-texclass="ORD"><msub><mi>V</mi><mrow data-mjx-texclass="ORD"><mi>s</mi><mi>t</mi><mi>a</mi><mi>r</mi><mi>t</mi></mrow></msub><mo>,</mo><msub><mi>V</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>n</mi><mi>d</mi></mrow></msub></mrow></math></mjx-assistive-mml></mjx-container><script type="math/tex"> \sum_{j \in V, j \neq i} x_{ij}^k = \sum_{j \in V, j \neq i} x_{ji}^k \quad \forall k \in K, \forall i \in V \setminus {V_{start}, V_{end}} </script></p></li><li><p><strong><span>任务分配 (Assignment):</span></strong><span> 如果一个响应者 </span><em><span>k</span></em><span> 的路径包含一个任务节点 </span><em><span>i</span></em><span>（即有 </span><em><span>x</span><strong><span>ij</span></strong><span>k</span></em><span>=1 或 </span><em><span>x</span><strong><span>ji</span></strong><span>k</span></em><span>=1），则该响应者被视为“访问”了该节点 </span><em><span>i</span></em><span>。</span></p><p><em><span>j</span></em><span>∈</span><em><span>V</span></em><span>∑</span><em><span>x</span><strong><span>ij</span></strong><span>k</span></em><span>≥</span><em><span>y</span><strong><span>i</span></strong><span>k</span></em><span>∀</span><em><span>i</span></em><span>∈</span><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span>,∀</span><em><span>k</span></em><span>∈</span><em><span>K</span></em></p></li><li><p><strong><span>子路径消除 (Subtour Elimination):</span></strong><span> 必须消除无效的循环（例如，使用 Miller-Tucker-Zemlin 约束）。</span></p></li><li><p><strong><span>总时间计算 (Time Calculation):</span></strong><span> </span><em><span>T**k</span></em><span> 是响应者 </span><em><span>k</span></em><span> 路径上的所有</span><em><span>边成本</span></em><span>（移动 </span><em><span>w</span></em><span>(</span><em><span>i</span></em><span>,</span><em><span>j</span></em><span>)）和</span><em><span>节点成本</span></em><span>（清扫 </span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>(</span><em><span>i</span></em><span>)）的总和。 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="59.512ex" height="2.919ex" role="img" focusable="false" viewBox="0 -853.7 26304.4 1290.2" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.987ex;"><defs><path id="MJX-216-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path><path id="MJX-216-TEX-I-1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path><path id="MJX-216-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-216-TEX-SO-2211" d="M61 748Q64 750 489 750H913L954 640Q965 609 976 579T993 533T999 516H979L959 517Q936 579 886 621T777 682Q724 700 655 705T436 710H319Q183 710 183 709Q186 706 348 484T511 259Q517 250 513 244L490 216Q466 188 420 134T330 27L149 -187Q149 -188 362 -188Q388 -188 436 -188T506 -189Q679 -189 778 -162T936 -43Q946 -27 959 6H999L913 -249L489 -250Q65 -250 62 -248Q56 -246 56 -239Q56 -234 118 -161Q186 -81 245 -11L428 206Q428 207 242 462L57 717L56 728Q56 744 61 748Z"></path><path id="MJX-216-TEX-I-1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJX-216-TEX-N-2208" d="M84 250Q84 372 166 450T360 539Q361 539 377 539T419 540T469 540H568Q583 532 583 520Q583 511 570 501L466 500Q355 499 329 494Q280 482 242 458T183 409T147 354T129 306T124 272V270H568Q583 262 583 250T568 230H124V228Q124 207 134 177T167 112T231 48T328 7Q355 1 466 0H570Q583 -10 583 -20Q583 -32 568 -40H471Q464 -40 446 -40T417 -41Q262 -41 172 45Q84 127 84 250Z"></path><path id="MJX-216-TEX-I-1D449" d="M52 648Q52 670 65 683H76Q118 680 181 680Q299 680 320 683H330Q336 677 336 674T334 656Q329 641 325 637H304Q282 635 274 635Q245 630 242 620Q242 618 271 369T301 118L374 235Q447 352 520 471T595 594Q599 601 599 609Q599 633 555 637Q537 637 537 648Q537 649 539 661Q542 675 545 679T558 683Q560 683 570 683T604 682T668 681Q737 681 755 683H762Q769 676 769 672Q769 655 760 640Q757 637 743 637Q730 636 719 635T698 630T682 623T670 615T660 608T652 599T645 592L452 282Q272 -9 266 -16Q263 -18 259 -21L241 -22H234Q216 -22 216 -15Q213 -9 177 305Q139 623 138 626Q133 637 76 637H59Q52 642 52 648Z"></path><path id="MJX-216-TEX-I-1D457" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"></path><path id="MJX-216-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path id="MJX-216-TEX-N-22C5" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250Z"></path><path id="MJX-216-TEX-I-1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path><path id="MJX-216-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-216-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-216-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-216-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path id="MJX-216-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-216-TEX-I-1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path><path id="MJX-216-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path id="MJX-216-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-216-TEX-I-1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path><path id="MJX-216-TEX-I-1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path><path id="MJX-216-TEX-N-2200" d="M0 673Q0 684 7 689T20 694Q32 694 38 680T82 567L126 451H430L473 566Q483 593 494 622T512 668T519 685Q524 694 538 694Q556 692 556 674Q556 670 426 329T293 -15Q288 -22 278 -22T263 -15Q260 -11 131 328T0 673ZM414 410Q414 411 278 411T142 410L278 55L414 410Z"></path><path id="MJX-216-TEX-I-1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D447" xlink:href="#MJX-216-TEX-I-1D447"></use></g><g data-mml-node="mi" transform="translate(617,-150) scale(0.707)"><use data-c="1D458" xlink:href="#MJX-216-TEX-I-1D458"></use></g></g><g data-mml-node="mo" transform="translate(1313.2,0)"><use data-c="3D" xlink:href="#MJX-216-TEX-N-3D"></use></g><g data-mml-node="munder" transform="translate(2369,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-216-TEX-SO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(1089,-285.4) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-216-TEX-I-1D456"></use></g><g data-mml-node="mo" transform="translate(345,0)"><use data-c="2208" xlink:href="#MJX-216-TEX-N-2208"></use></g><g data-mml-node="mi" transform="translate(1012,0)"><use data-c="1D449" xlink:href="#MJX-216-TEX-I-1D449"></use></g></g></g><g data-mml-node="munder" transform="translate(4934,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-216-TEX-SO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(1089,-285.4) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D457" xlink:href="#MJX-216-TEX-I-1D457"></use></g><g data-mml-node="mo" transform="translate(412,0)"><use data-c="2208" xlink:href="#MJX-216-TEX-N-2208"></use></g><g data-mml-node="mi" transform="translate(1079,0)"><use data-c="1D449" xlink:href="#MJX-216-TEX-I-1D449"></use></g></g></g><g data-mml-node="msubsup" transform="translate(7546.4,0)"><g data-mml-node="mi"><use data-c="1D465" xlink:href="#MJX-216-TEX-I-1D465"></use></g><g data-mml-node="mi" transform="translate(605,363) scale(0.707)"><use data-c="1D458" xlink:href="#MJX-216-TEX-I-1D458"></use></g><g data-mml-node="TeXAtom" transform="translate(605,-292.2) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-216-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(345,0)"><use data-c="1D457" xlink:href="#MJX-216-TEX-I-1D457"></use></g></g></g><g data-mml-node="mo" transform="translate(8958.9,0)"><use data-c="22C5" xlink:href="#MJX-216-TEX-N-22C5"></use></g><g data-mml-node="mi" transform="translate(9459.1,0)"><use data-c="1D464" xlink:href="#MJX-216-TEX-I-1D464"></use></g><g data-mml-node="mo" transform="translate(10175.1,0)"><use data-c="28" xlink:href="#MJX-216-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(10564.1,0)"><use data-c="1D456" xlink:href="#MJX-216-TEX-I-1D456"></use></g><g data-mml-node="mo" transform="translate(10909.1,0)"><use data-c="2C" xlink:href="#MJX-216-TEX-N-2C"></use></g><g data-mml-node="mi" transform="translate(11353.8,0)"><use data-c="1D457" xlink:href="#MJX-216-TEX-I-1D457"></use></g><g data-mml-node="mo" transform="translate(11765.8,0)"><use data-c="29" xlink:href="#MJX-216-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(12377,0)"><use data-c="2B" xlink:href="#MJX-216-TEX-N-2B"></use></g><g data-mml-node="munder" transform="translate(13377.2,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-216-TEX-SO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(1089,-285.4) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-216-TEX-I-1D456"></use></g><g data-mml-node="mo" transform="translate(345,0)"><use data-c="2208" xlink:href="#MJX-216-TEX-N-2208"></use></g><g data-mml-node="msub" transform="translate(1012,0)"><g data-mml-node="mi"><use data-c="1D449" xlink:href="#MJX-216-TEX-I-1D449"></use></g><g data-mml-node="TeXAtom" transform="translate(616,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-216-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(361,0)"><use data-c="1D44E" xlink:href="#MJX-216-TEX-I-1D44E"></use></g><g data-mml-node="mi" transform="translate(890,0)"><use data-c="1D460" xlink:href="#MJX-216-TEX-I-1D460"></use></g><g data-mml-node="mi" transform="translate(1359,0)"><use data-c="1D458" xlink:href="#MJX-216-TEX-I-1D458"></use></g></g></g></g></g><g data-mml-node="msubsup" transform="translate(16809.4,0)"><g data-mml-node="mi"><use data-c="1D466" xlink:href="#MJX-216-TEX-I-1D466"></use></g><g data-mml-node="mi" transform="translate(523,363) scale(0.707)"><use data-c="1D458" xlink:href="#MJX-216-TEX-I-1D458"></use></g><g data-mml-node="mi" transform="translate(523,-292.2) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-216-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(17973,0)"><use data-c="22C5" xlink:href="#MJX-216-TEX-N-22C5"></use></g><g data-mml-node="msub" transform="translate(18473.3,0)"><g data-mml-node="mi"><use data-c="1D447" xlink:href="#MJX-216-TEX-I-1D447"></use></g><g data-mml-node="TeXAtom" transform="translate(617,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D460" xlink:href="#MJX-216-TEX-I-1D460"></use></g><g data-mml-node="mi" transform="translate(469,0)"><use data-c="1D464" xlink:href="#MJX-216-TEX-I-1D464"></use></g><g data-mml-node="mi" transform="translate(1185,0)"><use data-c="1D452" xlink:href="#MJX-216-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(1651,0)"><use data-c="1D452" xlink:href="#MJX-216-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(2117,0)"><use data-c="1D45D" xlink:href="#MJX-216-TEX-I-1D45D"></use></g></g></g><g data-mml-node="mo" transform="translate(20992.9,0)"><use data-c="28" xlink:href="#MJX-216-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(21381.9,0)"><use data-c="1D456" xlink:href="#MJX-216-TEX-I-1D456"></use></g><g data-mml-node="mo" transform="translate(21726.9,0)"><use data-c="29" xlink:href="#MJX-216-TEX-N-29"></use></g><g data-mml-node="mstyle" transform="translate(22115.9,0)"><g data-mml-node="mspace"></g></g><g data-mml-node="mi" transform="translate(23115.9,0)"><use data-c="2200" xlink:href="#MJX-216-TEX-N-2200"></use></g><g data-mml-node="mi" transform="translate(23671.9,0)"><use data-c="1D458" xlink:href="#MJX-216-TEX-I-1D458"></use></g><g data-mml-node="mo" transform="translate(24470.7,0)"><use data-c="2208" xlink:href="#MJX-216-TEX-N-2208"></use></g><g data-mml-node="mi" transform="translate(25415.4,0)"><use data-c="1D43E" xlink:href="#MJX-216-TEX-I-1D43E"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>T</mi><mi>k</mi></msub><mo>=</mo><munder><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>i</mi><mo>∈</mo><mi>V</mi></mrow></munder><munder><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>j</mi><mo>∈</mo><mi>V</mi></mrow></munder><msubsup><mi>x</mi><mrow data-mjx-texclass="ORD"><mi>i</mi><mi>j</mi></mrow><mi>k</mi></msubsup><mo>⋅</mo><mi>w</mi><mo stretchy="false">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>+</mo><munder><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>i</mi><mo>∈</mo><msub><mi>V</mi><mrow data-mjx-texclass="ORD"><mi>t</mi><mi>a</mi><mi>s</mi><mi>k</mi></mrow></msub></mrow></munder><msubsup><mi>y</mi><mi>i</mi><mi>k</mi></msubsup><mo>⋅</mo><msub><mi>T</mi><mrow data-mjx-texclass="ORD"><mi>s</mi><mi>w</mi><mi>e</mi><mi>e</mi><mi>p</mi></mrow></msub><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mi mathvariant="normal">∀</mi><mi>k</mi><mo>∈</mo><mi>K</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex"> T_k = \sum_{i \in V} \sum_{j \in V} x_{ij}^k \cdot w(i, j) + \sum_{i \in V_{task}} y_i^k \cdot T_{sweep}(i) \quad \forall k \in K </script></p></li><li><p><strong><span>Makespan 定义：</span></strong></p><p><em><span>T</span><strong><span>ma</span></strong><span>x</span></em><span>≥</span><em><span>T**k</span></em><span>∀</span><em><span>k</span></em><span>∈</span><em><span>K</span></em></p></li></ol><p>&nbsp;</p><h3 id='23-模型的求解算法'><span>2.3 模型的求解算法</span></h3><p>&nbsp;</p><p><span>上述数学规划模型是一个整数规划 (IP) 模型，它是 NP-hard 问题 ，计算复杂度很高。因此，需要根据问题规模选择不同的求解策略，以确保“具体可行”。  </span></p><ul><li><p><strong><span>策略1：精确解 (N &lt; 10)</span></strong><span> 对于情景一（图1）这样的小型问题 (N=6, K=2)，上述 IP 模型是可行的。可以使用标准的数学规划求解器（如 Gurobi, CPLEX）在几秒钟内求得精确的最优解。</span></p></li><li><p><strong><span>策略2：启发式解 (N &gt;= 10)</span></strong><span> 对于情景二、三中的大型建筑（例如 N=50, K=5），IP 模型在计算上不可行。必须使用启发式算法 (Heuristic Algorithm) 来获得近似最优解。一个高效的策略是采用“分区-寻路”两阶段法 ：  </span></p><ol><li><p><strong><span>阶段1：分区 (Partitioning)</span></strong><span>：使用聚类算法（例如 K-Means 或图论中的其他分区方法）将 </span><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span> （任务节点）划分为 </span><em><span>K</span></em><span> 个簇 (Cluster)。  </span></p></li><li><p><strong><span>阶段2：路径规划 (Pathfinding)</span></strong><span>：在每个簇内，为分配的响应者求解一个单人 TSP 问题（可以使用 2-opt 等局部搜索算法 ）。  </span></p></li></ol></li></ul><p><span>对于任务分配，可以使用匈牙利算法 (Hungarian algorithm) 或拍卖算法 (auction algorithm) 来高效匹配响应者和任务簇。底层的路径规划（计算 </span><em><span>w</span></em><span>(</span><em><span>i</span></em><span>,</span><em><span>j</span></em><span>)）则使用 A* 算法 。  </span></p><p>&nbsp;</p><h2 id='第三部分基础情景情景一求解双响应者办公楼模型'><span>第三部分：基础情景（情景一）求解：双响应者办公楼模型</span></h2><p>&nbsp;</p><p><span>本节将应用第二部分中的核心清扫模型 (CSM)，求解 Req 2 中图1所示的基础情景 。  </span></p><p>&nbsp;</p><h3 id='31-情景一图1的图定义与参数化'><span>3.1 情景一（图1）的图定义与参数化</span></h3><p>&nbsp;</p><ul><li><p><strong><span>图定义 </span><span>*</span><span>G</span><span>*</span><em><span>ba</span><span>*</span></em><span>se</span><span>*</span><span>：</span></strong><span> 我们采用 中对图1的形式化定义，该图共包含11个节点和10条边。  </span></p><ul><li><p><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span>={</span><em><span>V</span></em><span>3,</span><em><span>V</span></em><span>4,</span><em><span>V</span></em><span>5,</span><em><span>V</span></em><span>6,</span><em><span>V</span></em><span>7,</span><em><span>V</span></em><span>8} (6 个办公室)</span></p></li><li><p><em><span>V</span><strong><span>t</span></strong><span>r</span><strong><span>an</span></strong><span>s</span><strong><span>i</span></strong><span>t</span></em><span>={</span><em><span>V</span></em><span>9,</span><em><span>V</span></em><span>10,</span><em><span>V</span></em><span>11} (3 个走廊分段)</span></p></li><li><p><em><span>V</span><strong><span>s</span></strong><span>t</span><strong><span>a</span></strong><span>r**t</span></em><span>=</span><em><span>V</span><strong><span>e</span></strong><span>x</span><strong><span>i</span></strong><span>t</span></em><span>={</span><em><span>V</span></em><span>1,</span><em><span>V</span></em><span>2} (2 个出口)</span></p></li></ul></li><li><p><span>时间权重估算 ： 为了使模型可行，必须基于消防员 SOPs 对 </span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span> 和 </span><em><span>w</span></em><span>(</span><em><span>e</span></em><span>) 进行合理估算。  </span></p><ol><li><p><strong><em><span>T</span><span>*</span></em><span>s</span><span>*</span><em><span>w</span><span>*</span></em><span>ee</span><span>*</span><span>*p</span><span>*</span><span>(</span><span>*</span><span>v</span><span>*</span><span>) (节点成本):</span></strong></p><ul><li><p><em><span>T</span><strong><span>e</span></strong><span>n</span><strong><span>t</span></strong><span>ry</span></em><span> (检查并开门 )：假设 10 秒。  </span></p></li><li><p><em><span>T</span><strong><span>se</span></strong><span>a</span><strong><span>rc</span></strong><span>h</span></em><span> (两人小组用TIC系统性扫描标准办公室 )：假设 60 秒。  </span></p></li><li><p><em><span>T</span><strong><span>v</span></strong><span>er</span><strong><span>i</span></strong><span>f**y</span></em><span> (确认并报告“全部清除” )：假设 15 秒。  </span></p></li><li><p><strong><em><span>T</span><span>*</span></em><span>s</span><span>*</span><em><span>w</span><span>*</span></em><span>ee</span><span>*</span><span>*p</span><span>*</span><span>(</span><span>*</span><span>v</span><span>*</span><span>) = 85 秒</span></strong><span> （对于所有6个办公室节点）。</span></p></li></ul></li><li><p><span>*</span><strong><span>w</span><span>*</span><span>(</span><span>*</span><span>e</span><span>*</span><span>) (边成本):</span></strong></p><ul><li><p><span>假设响应者负重移动速度 </span><em><span>v</span><strong><span>m</span></strong><span>o</span><strong><span>v</span></strong><span>e</span></em><span>=1 米/秒。</span></p></li><li><p><span>假设走廊分段（例如 V9 到 V10）长度为 10 米。</span></p></li><li><p><span>假设门到走廊中心（例如 V3 到 V9）距离为 5 米。</span></p></li><li><p><span>假设出口到走廊（例如 V1 到 V9）距离为 10 米。</span></p></li></ul></li></ol></li></ul><p>&nbsp;</p><h3 id='32-情景一时间权重估算含sops分解'><span>3.2 情景一：时间权重估算（含SOPs分解）</span></h3><p>&nbsp;</p><p><span>下表 3.1 详细列出了情景一的参数估算及其依据。</span></p><p><strong><span>表 3.1：情景一：时间权重估算（含SOPs分解）</span></strong></p><figure class='table-figure'><table><thead><tr><th><span>参数</span></th><th><span>描述</span></th><th><span>SOPs 依据 (相关文献)</span></th><th><span>估算时间 (秒)</span></th></tr></thead><tbody><tr><td><em><span>T</span><strong><span>e</span></strong><span>n</span><strong><span>t</span></strong><span>ry</span></em></td><td><span>检查门热源、开门</span></td><td><span>检查门的热源 </span></td><td><span>10</span></td></tr><tr><td><em><span>T</span><strong><span>se</span></strong><span>a</span><strong><span>rc</span></strong><span>h</span></em></td><td><span>两人小组、TIC扫描、系统搜索</span></td><td><span>受控但迅速的搜索 ；用TIC扫描 ；两人（最少）小组 </span></td><td><span>60</span></td></tr><tr><td><em><span>T</span><strong><span>v</span></strong><span>er</span><strong><span>i</span></strong><span>f**y</span></em></td><td><span>标记、通信“全部清除”</span></td><td><span>报告“全部清除” ； sweep verification </span></td><td><span>15</span></td></tr><tr><td><strong><em><span>T</span><span>*</span></em><span>s</span><span>*</span><em><span>w</span><span>*</span></em><span>ee</span><span>*</span><span>*p</span><span>*</span><span> (节点成本)</span></strong></td><td><strong><span>清扫一个办公室</span></strong></td><td>&nbsp;</td><td><strong><span>85</span></strong></td></tr><tr><td><em><span>w</span></em><span>(</span><em><span>e</span><strong><span>d</span></strong><span>oor</span></em><span>)</span></td><td><span>穿越门（例如 V3-V9）</span></td><td><span>节点连接 </span></td><td><span>5</span></td></tr><tr><td><em><span>w</span></em><span>(</span><em><span>e</span><strong><span>ha</span></strong><span>ll</span></em><span>)</span></td><td><span>穿越走廊分段（例如 V9-V10）</span></td><td><span>节点连接 </span></td><td><span>10</span></td></tr><tr><td><em><span>w</span></em><span>(</span><em><span>e</span><strong><span>e</span></strong><span>x</span><strong><span>i</span></strong><span>t</span></em><span>)</span></td><td><span>穿越出口到走廊（例如 V1-V9）</span></td><td><span>节点连接 </span></td><td><span>10</span></td></tr></tbody></table></figure><p><span> </span></p><p>&nbsp;</p><h3 id='33-路径优化与结果求解-min-max'><span>3.3 路径优化与结果：求解 Min-Max</span></h3><p>&nbsp;</p><p><strong><span>问题：</span></strong><span> 2名响应者 (</span><em><span>K</span></em><span>=2, </span><em><span>R</span></em><span>1,</span><em><span>R</span></em><span>2)，从 {</span><em><span>V</span></em><span>1,</span><em><span>V</span></em><span>2} 出发，清扫6个任务 {</span><em><span>V</span></em><span>3...</span><em><span>V</span></em><span>8}。 </span><strong><span>最优起始位置：</span></strong><span> 为最小化 </span><em><span>T</span><strong><span>ma</span></strong><span>x</span></em><span>，响应者应从不同地点开始以覆盖更多区域。因此，设定：*</span><strong><span>R</span><span>*</span><span>1 在 V1 开始；</span><span>*</span><span>R</span><span>*</span><span>2 在 V2 开始。</span></strong></p><p><strong><span>分区策略分析：</span></strong></p><ul><li><p><strong><span>策略 A：地理分区（对称）</span></strong></p><ul><li><p><em><span>R</span></em><span>1 (从V1): 分配 </span><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span>1={</span><em><span>V</span></em><span>3,</span><em><span>V</span></em><span>4,</span><em><span>V</span></em><span>5} (左侧房间)。</span></p></li><li><p><em><span>R</span></em><span>2 (从V2): 分配 </span><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span>2={</span><em><span>V</span></em><span>6,</span><em><span>V</span></em><span>7,</span><em><span>V</span></em><span>8} (右侧房间)。</span></p></li><li><p><strong><span>计算 </span><span>*</span><span>T</span><span>*</span><span>(</span><span>*</span><span>R</span><span>*</span><span>1)：</span></strong><span> </span><em><span>R</span></em><span>1 的最优路径（例如蛇形）为 V1 -&gt; V9 -&gt; V3(清扫) -&gt; V9 -&gt; V4(清扫) -&gt; V9 -&gt; V5(清扫) -&gt; V9 -&gt; V1(退出)。</span></p></li><li><p><em><span>T</span></em><span>(</span><em><span>R</span></em><span>1)=</span><em><span>w</span></em><span>(</span><em><span>V</span></em><span>1,</span><em><span>V</span></em><span>9)++++</span><em><span>w</span></em><span>(</span><em><span>V</span></em><span>9,</span><em><span>V</span></em><span>1)</span></p></li><li><p><em><span>T</span></em><span>(</span><em><span>R</span></em><span>1)=10+[5+85+5]+[5+85+5]+[5+85+5]+10</span></p></li><li><p><em><span>T</span></em><span>(</span><em><span>R</span></em><span>1)=10+95+95+95+10=</span><strong><span>305</span></strong><span> </span><strong><span>秒</span></strong><span>。</span></p></li><li><p><strong><span>计算 </span><span>*</span><span>T</span><span>*</span><span>(</span><span>*</span><span>R</span><span>*</span><span>2)：</span></strong><span> 由于建筑布局对称， </span><em><span>T</span></em><span>(</span><em><span>R</span></em><span>2) 采用相同策略的路径时间为 </span><strong><span>305</span></strong><span> </span><strong><span>秒</span></strong><span>。</span></p></li><li><p><strong><span>策略 A </span><span>*</span><span>T</span><span>*</span><em><span>ma</span><span>*</span></em><span>x</span><span>*</span><span>=max(305,305)=305 秒。</span></strong></p></li></ul></li><li><p><strong><span>策略 B：非对称分区 (4-2)</span></strong></p><ul><li><p><em><span>R</span></em><span>1 (从V1): 分配 </span><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span>1={</span><em><span>V</span></em><span>3,</span><em><span>V</span></em><span>4,</span><em><span>V</span></em><span>5,</span><em><span>V</span></em><span>6}。</span></p></li><li><p><em><span>R</span></em><span>2 (从V2): 分配 </span><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span>2={</span><em><span>V</span></em><span>7,</span><em><span>V</span></em><span>8}。</span></p></li><li><p><strong><span>计算 </span><span>*</span><span>T</span><span>*</span><span>(</span><span>*</span><span>R</span><span>*</span><span>2)：</span></strong><span> V2 -&gt; V11 -&gt; V7(清扫) -&gt; V11 -&gt; V8(清扫) -&gt; V11 -&gt; V2(退出)。</span></p></li><li><p><em><span>T</span></em><span>(</span><em><span>R</span></em><span>2)=10+[5+85+5]+[5+85+5]+10=</span><strong><span>210</span></strong><span> </span><strong><span>秒</span></strong><span>。</span></p></li><li><p><strong><span>计算 </span><span>*</span><span>T</span><span>*</span><span>(</span><span>*</span><span>R</span><span>*</span><span>1)：</span></strong><span> </span><em><span>R</span></em><span>1 必须清扫V3,V4,V5，然后穿越走廊 (V9-&gt;V10-&gt;V11) 去清扫V6。</span></p></li><li><p><em><span>T</span></em><span>(</span><em><span>R</span></em><span>1) (粗略) = (清扫V3,V4,V5的时间) + (穿越走廊时间) + (清扫V6的时间)</span></p></li><li><p><em><span>T</span></em><span>(</span><em><span>R</span></em><span>1)≈(10+3×95)+</span><em><span>w</span></em><span>(</span><em><span>V</span></em><span>9,</span><em><span>V</span></em><span>10)+</span><em><span>w</span></em><span>(</span><em><span>V</span></em><span>10,</span><em><span>V</span></em><span>11)+(</span><em><span>w</span></em><span>(</span><em><span>V</span></em><span>11,</span><em><span>V</span></em><span>6)+</span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>(</span><em><span>V</span></em><span>6)+...)</span></p></li><li><p><em><span>T</span></em><span>(</span><em><span>R</span></em><span>1)=(10+95+95+95)+10+10+(5+85+5)+10 (退出)=</span><strong><span>425</span></strong><span> </span><strong><span>秒</span></strong><span>。</span></p></li><li><p><strong><span>策略 B </span><span>*</span><span>T</span><span>*</span><em><span>ma</span><span>*</span></em><span>x</span><span>*</span><span>=max(425,210)=425 秒。</span></strong></p></li></ul></li></ul><p><strong><span>结论：</span></strong><span> 通过对比，策略 A（对称地理分区）是最优的。</span></p><ul><li><p><strong><span>清扫顺序/路径：</span></strong></p><ul><li><p><span>响应者 1 (R1)：</span><em><span>V</span></em><span>1→</span><em><span>V</span></em><span>9→</span><em><span>V</span></em><span>3(清扫)→</span><em><span>V</span></em><span>9→</span><em><span>V</span></em><span>4(清扫)→</span><em><span>V</span></em><span>9→</span><em><span>V</span></em><span>5(清扫)→</span><em><span>V</span></em><span>9→</span><em><span>V</span></em><span>1</span></p></li><li><p><span>响应者 2 (R2)：</span><em><span>V</span></em><span>2→</span><em><span>V</span></em><span>11→</span><em><span>V</span></em><span>6(清扫)→</span><em><span>V</span></em><span>11→</span><em><span>V</span></em><span>7(清扫)→</span><em><span>V</span></em><span>11→</span><em><span>V</span></em><span>8(清扫)→</span><em><span>V</span></em><span>11→</span><em><span>V</span></em><span>2</span></p></li></ul></li><li><p><strong><span>最优响应者数量及起始位置：</span></strong><span> 2名响应者。R1 从 V1 开始，R2 从 V2 开始。</span></p></li><li><p><strong><span>最小总清扫时间 (Makespan)：305 秒 (即 5 分 5 秒)。</span></strong></p></li></ul><p>&nbsp;</p><h3 id='33-情景一最优路径分配与总清扫时间-makespan'><span>3.3 情景一：最优路径分配与总清扫时间 (Makespan)</span></h3><p>&nbsp;</p><p><span>下表 3.2 总结了基础情景的求解结果。</span></p><p><strong><span>表 3.2：情景一：最优路径分配与总清扫时间 (Makespan)</span></strong></p><figure class='table-figure'><table><thead><tr><th><span>响应者</span></th><th><span>起始位置</span></th><th><span>分配任务 (分区)</span></th><th><span>路径时间 (秒)</span></th></tr></thead><tbody><tr><td><span>R1</span></td><td><span>V1 (出口 1)</span></td><td><span>{</span><em><span>V</span></em><span>3,</span><em><span>V</span></em><span>4,</span><em><span>V</span></em><span>5} (左侧办公室)</span></td><td><span>305</span></td></tr><tr><td><span>R2</span></td><td><span>V2 (出口 2)</span></td><td><span>{</span><em><span>V</span></em><span>6,</span><em><span>V</span></em><span>7,</span><em><span>V</span></em><span>8} (右侧办公室)</span></td><td><span>305</span></td></tr><tr><td><strong><span>系统</span></strong></td><td>&nbsp;</td><td><strong><em><span>T</span><span>*</span></em><span>ma</span><span>*</span><span>*x</span><span>*</span><span>=max(305,305)</span></strong></td><td><strong><span>305 秒</span></strong></td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='第四部分模型应用与泛化情景二--三'><span>第四部分：模型应用与泛化（情景二 &amp; 三）</span></h2><p>&nbsp;</p><p><span>本部分旨在展示核心清扫模型 (CSM) 的灵活性和价值，通过设计和分析两个额外的、更复杂的建筑布局来满足 Req 3 。  </span></p><p>&nbsp;</p><h3 id='41-情景二多楼层日托中心-daycare-center'><span>4.1 情景二：多楼层日托中心 (Daycare Center)</span></h3><p>&nbsp;</p><ul><li><p><strong><span>布局设计：</span></strong></p><ul><li><p><strong><span>楼层：</span></strong><span> 2层。</span></p></li><li><p><span>居住者 ： 高风险。F1（一楼）为婴儿/学步儿（非自主行动），F2（二楼）为大龄儿童和办公室。  </span></p></li><li><p><strong><span>布局：</span></strong><span> F1 有2个婴儿室 (P1-高优先级) 和1个游戏室 (P1)。F2 有2个教室 (P2-中优先级) 和1个办公室 (P3-低优先级)。2个楼梯 (Stair1, Stair2) 连接F1和F2。1个主出口 (Exit) 在F1。</span></p></li></ul></li><li><p><strong><span>模型修改：优先 m-TSP (Prioritized m-TSP)</span></strong><span> 在日托中心，清扫“办公室”和“婴儿室”的优先级显然不同 。一个简单的 Min-Max m-TSP 模型可能是</span><em><span>错误</span></em><span>的，因为它可能会为了“时间效率”而先清扫办公室，而将婴儿室留到最后，这违反了生命安全原则。  </span></p><p><span>因此，模型必须从 </span><em><span>时间最优</span></em><span> 转向 </span><em><span>风险/优先级最优</span></em><span>，即在路径规划中集成“高风险区域” 。  </span></p><p><strong><span>模型修改：</span></strong></p><ol><li><p><strong><span>优先级约束：</span></strong><span> </span><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span> 被划分为 </span><em><span>V**P</span></em><span>1,</span><em><span>V**P</span></em><span>2,</span><em><span>V**P</span></em><span>3。模型中加入新约束：响应者的路径必须满足 ∀</span><em><span>v**j</span></em><span>∈</span><em><span>V**P</span></em><span>2,∀</span><em><span>v**i</span></em><span>∈</span><em><span>V**P</span></em><span>1， </span><em><span>v**i</span></em><span> 必须在 </span><em><span>v**j</span></em><span> 之前被访问（清扫）。</span></p></li><li><p><strong><span>参数修改：</span></strong><span> </span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>(</span><em><span>v</span></em><span>) 发生变化。</span></p><ul><li><p><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>(</span><em><span>P</span></em><span>1)（婴儿室）：300 秒（搜索+携带婴儿）。</span></p></li><li><p><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>(</span><em><span>P</span></em><span>3)（办公室）：85 秒（同上）。</span></p></li></ul></li></ol></li><li><p><strong><span>分析：</span></strong></p><ul><li><p><strong><span>响应者数量：</span></strong><span> </span><em><span>K</span></em><span>=3。</span><strong><span>起始位置：</span></strong><span> 均在 F1 的 Exit。</span></p></li><li><p><strong><span>模型求解：</span></strong><span> 启动后，模型将首先为所有 </span><em><span>K</span></em><span>=3 的响应者分配 </span><em><span>V**P</span></em><span>1 任务（3个 P1 房间）。3名响应者将立即清扫F1的3个P1房间。在 </span><em><span>T</span></em><span>≈300</span><em><span>s</span></em><span> 时，P1区域被清除。然后，响应者们移动到F2，清扫P2房间，最后清扫P3办公室。</span></p></li><li><p><strong><span>价值展示：</span></strong><span> 该模型（Prioritized m-TSP）确保了高风险区域 被优先处理，符合应急响应的实际需求。  </span></p></li></ul></li></ul><p>&nbsp;</p><h3 id='42-情景三大型单层仓储中心-warehouse'><span>4.2 情景三：大型单层仓储中心 (Warehouse)</span></h3><p>&nbsp;</p><ul><li><p><strong><span>布局设计：</span></strong></p><ul><li><p><strong><span>楼层：</span></strong><span> 1层，但面积巨大（例如 200m x 200m）。</span></p></li><li><p><span>布局 ： 包含开放办公区和“高架存储”区 。高架区是“迷宫式”的 ，由数十条（例如 N=50）狭长的过道 (Aisle) 组成。  </span></p></li></ul></li><li><p><strong><span>模型修改：大规模 m-TSP 与复杂图拓扑</span></strong><span> 仓库的挑战不是优先级，而是</span><em><span>规模 (Scale)</span></em><span> 和 </span><em><span>拓扑 (Topology)</span></em><span>。</span></p><p><strong><span>模型修改：</span></strong></p><ol><li><p><strong><span>图定义 </span><span>*</span><span>G</span><span>*</span><em><span>w</span><span>*</span></em><span>a</span><span>*</span><em><span>re</span><span>*</span></em><span>h</span><span>*</span><em><span>o</span><span>*</span></em><span>u</span><span>*</span><span>*se</span><span>*</span><span>：</span></strong><span> 任务节点数 </span><em><span>N</span></em><span> 很大（例如 N=50+）。</span><em><span>V</span><strong><span>t</span></strong><span>a</span><strong><span>s</span></strong><span>k</span></em><span>=</span><em><span>V</span><strong><span>o</span></strong><span>ff</span><strong><span>i</span></strong><span>ces</span></em><span>∪</span><em><span>V</span><strong><span>ai</span></strong><span>s</span><strong><span>l</span></strong><span>es</span></em><span>。</span></p></li><li><p><strong><span>参数修改：</span></strong><span> 搜索“高架存储”的过道 非常耗时。  </span></p><ul><li><p><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>(</span><em><span>O</span><strong><span>ff</span></strong><span>i**ce</span></em><span>)=85 秒。</span></p></li><li><p><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>(</span><em><span>A</span><strong><span>i</span></strong><span>s</span><strong><span>l</span></strong><span>e</span></em><span>)=300 秒。</span></p></li><li><p><em><span>w</span></em><span>(</span><em><span>e</span></em><span>)：过道的边权重（移动时间）很高（例如，100米长）。</span></p></li></ul></li></ol></li><li><p><strong><span>分析：</span></strong></p><ul><li><p><strong><span>响应者数量：</span></strong><span> </span><em><span>K</span></em><span>=4。</span><strong><span>起始位置：</span></strong><span> 2个在主入口，2个在后备出口。</span></p></li><li><p><strong><span>求解：</span></strong><span> 由于 </span><em><span>N</span></em><span> 很大，必须使用 Section 2.3 中定义的</span><strong><span>启发式算法</span></strong><span>。</span></p><ol><li><p><span>阶段1 ： K-Means 算法将 50 个任务节点（过道+办公室）在空间上划分为 4 个簇 (Zones)。  </span></p></li><li><p><span>阶段2 ： 每个响应者 </span><em><span>k</span></em><span> 在其分配的 Zone </span><em><span>k</span></em><span> 内独立求解一个（小规模）TSP。  </span></p></li></ol></li><li><p><strong><span>价值展示：</span></strong><span> 该模型（m-TSP + K-Means Heuristic）展示了其</span><em><span>可扩展性</span></em><span> (Scalability)，能够处理</span><em><span>大规模</span></em><span>（高 </span><em><span>N</span></em><span>）和</span><em><span>复杂布局</span></em><span>（高 </span><em><span>w</span></em><span>(</span><em><span>e</span></em><span>) 和 </span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span>）的真实世界情景，这是 Req 3 的核心要求。</span></p></li></ul></li></ul><p>&nbsp;</p><h3 id='43-三种情景的布局模型参数与结果对比'><span>4.3 三种情景的布局、模型参数与结果对比</span></h3><p>&nbsp;</p><p><span>下表 4.1 对比了三个情景，展示了模型框架的灵活性和价值 。  </span></p><p><strong><span>表 4.1：三种情景的布局、模型参数与结果对比</span></strong></p><figure class='table-figure'><table><thead><tr><th><span>特征</span></th><th><span>情景一：办公室 (Fig 1)</span></th><th><span>情景二：日托中心</span></th><th><span>情景三：仓库</span></th></tr></thead><tbody><tr><td><span>布局 (相关文献)</span></td><td><span>简单，线性 </span></td><td><span>多楼层，分区域 </span></td><td><span>迷宫式，大规模 </span></td></tr><tr><td><span>居住者风险</span></td><td><span>低 (可自主行动) </span></td><td><span>极高 (非自主 )</span></td><td><span>低 (密度)，高 (迷失 )</span></td></tr><tr><td><span>关键挑战</span></td><td><span>负载均衡 (Balancing)</span></td><td><span>优先级 (Prioritization )</span></td><td><span>规模与拓扑 (Scale &amp; Maze )</span></td></tr><tr><td><strong><span>核心模型</span></strong></td><td><strong><span>Min-Max m-TSP (CSM)</span></strong></td><td><strong><span>Prioritized m-TSP</span></strong></td><td><strong><span>Large-Scale m-TSP (Heuristic)</span></strong></td></tr><tr><td><em><span>N</span></em><span> (任务数)</span></td><td><span>6</span></td><td><span>≈ 10</span></td><td><span>≈ 50+</span></td></tr><tr><td><em><span>K</span></em><span> (响应者)</span></td><td><span>2</span></td><td><span>3</span></td><td><span>4</span></td></tr><tr><td><span>估算 </span><em><span>T</span><strong><span>ma</span></strong><span>x</span></em></td><td><span>305 秒</span></td><td><span>&gt; 600 秒 (P1清扫时间主导)</span></td><td><span>&gt; 1000 秒 (大规模和高T_sweep主导)</span></td></tr></tbody></table></figure><p><span> </span></p><p>&nbsp;</p><h2 id='第五部分动态扩展模型-d-csm集成时变危害与技术'><span>第五部分：动态扩展模型 (D-CSM)：集成时变危害与技术</span></h2><p>&nbsp;</p><p><span>Req 4 要求扩展模型以包含现实约束，如“时变危害”和新技术。本节将静态的 CSM 演进为动态核心清扫模型 (D-CSM)。  </span></p><p>&nbsp;</p><h3 id='51-时变危害建模火灾烟雾'><span>5.1 时变危害建模（火灾/烟雾）</span></h3><p>&nbsp;</p><p><span>静态模型 (CSM) 假设 </span><em><span>W</span></em><span>(</span><em><span>e</span></em><span>) 和 </span><em><span>T</span><strong><span>s</span></strong><span>w</span><strong><span>ee</span></strong><span>p</span></em><span> 是恒定的。然而，火灾 或烟雾 会使路径无法通行或风险过高。  </span></p><p><strong><span>模型演化 (D-CSM)：</span></strong><span> 模型必须从 </span><em><span>G</span></em><span>(</span><em><span>V</span></em><span>,</span><em><span>E</span></em><span>,</span><em><span>W</span></em><span>) 演变为 </span><em><span>G</span></em><span>(</span><em><span>V</span></em><span>,</span><em><span>E</span></em><span>,</span><em><span>W</span></em><span>(</span><em><span>t</span></em><span>))，一个</span><strong><span>动态图 (Dynamic Graph)</span></strong><span>。</span></p><ul><li><p><em><span>W</span></em><span>(</span><em><span>e</span></em><span>,</span><em><span>t</span></em><span>) = 在时间 </span><em><span>t</span></em><span> 遍历边 </span><em><span>e</span></em><span> 的成本（时间或风险）。</span></p></li></ul><p><strong><span>危害蔓延模型：</span></strong><span> 为了预测 </span><em><span>W</span></em><span>(</span><em><span>t</span></em><span>) 如何变化，我们引入一个简化的危害蔓延模型。</span></p><ol><li><p><strong><span>图论模型：</span></strong><span> 采用“消防员问题”(Firefighter Problem) 或“区域火灾模型”(Zonal Fire Model) 。火（或烟雾）在离散时间步 </span><em><span>t</span></em><span> 中从一个节点传播到相邻节点。  </span></p></li><li><p><strong><span>动态权重：</span></strong><span> 中提到，边的权重可以表示为“单位时间流过的烟雾量”。 提到图节点可以保存“动态变化的数据特征”。  </span></p></li><li><p><strong><span>D-CSM 实现：</span></strong><span> 当一个节点 </span><em><span>v</span></em><span> 或边 </span><em><span>e</span></em><span> 的烟雾浓度 </span><em><span>S</span></em><span>(</span><em><span>t</span></em><span>) 超过阈值 </span><em><span>θ</span></em><span> 时，其成本 </span><em><span>W</span></em><span>(</span><em><span>e</span></em><span>,</span><em><span>t</span></em><span>)=∞（即不可通行）。</span></p></li></ol><p><strong><span>对模型的影响：</span></strong><span> 响应者不能再遵循 </span><em><span>预先计算</span></em><span> 的静态路径 (第三部分)。他们必须进行</span><strong><span>动态路径规划</span></strong><span> 。在每次移动时，响应者（或指挥中心）必须根据最新的 </span><em><span>W</span></em><span>(</span><em><span>t</span></em><span>)，使用例如动态 A* 算法 ，重新计算到下一个任务节点的最短/最安全路径。  </span></p><p>&nbsp;</p><h3 id='52-动态居住者移动'><span>5.2 动态居住者移动</span></h3><p>&nbsp;</p><p><span>Req 4a 还要求考虑“动态移动的人”。居住者不是静态的，他们是“移动的障碍” ，他们的行为（如恐慌）会显著影响疏散 。  </span></p><p><strong><span>模型耦合 (Coupled Model)：</span></strong><span> 为了模拟这一复杂交互，需要一个多层耦合模型，它结合了响应者、居住者和危害：</span></p><ol><li><p><strong><span>危害层 (CFD/Zonal)：</span></strong><span> 模拟烟雾/火灾的物理扩散 ，更新 </span><em><span>W</span><strong><span>ha</span></strong><span>z</span><strong><span>a</span></strong><span>r**d</span></em><span>(</span><em><span>e</span></em><span>,</span><em><span>t</span></em><span>)。  </span></p></li><li><p><strong><span>居住者层 (ABM)：</span></strong><span> 使用</span><strong><span>智能体模型 (Agent-Based Model, ABM)</span></strong><span> 模拟人群。ABM 中的“代理”（居住者）对危害（层1）做出反应，产生拥堵。这会更新 </span><em><span>W</span><strong><span>co</span></strong><span>n</span><strong><span>g</span></strong><span>es</span><strong><span>t</span></strong><span>i</span><strong><span>o</span></strong><span>n</span></em><span>(</span><em><span>e</span></em><span>,</span><em><span>t</span></em><span>)。  </span></p></li><li><p><strong><span>响应者层 (D-CSM)：</span></strong><span> 响应者（我们的代理）在 </span><em><span>W</span></em><span>(</span><em><span>e</span></em><span>,</span><em><span>t</span></em><span>)=</span><em><span>W</span><strong><span>ha</span></strong><span>z</span><strong><span>a</span></strong><span>r**d</span></em><span>+</span><em><span>W</span><strong><span>co</span></strong><span>n</span><strong><span>g</span></strong><span>es</span><strong><span>t</span></strong><span>i</span><strong><span>o</span></strong><span>n</span></em><span> 的组合成本图上规划路径，以执行清扫任务。他们将主动避开（或帮助疏通）居住者造成的拥堵。</span></p></li></ol><p>&nbsp;</p><h3 id='53-技术集成的影响'><span>5.3 技术集成的影响</span></h3><p>&nbsp;</p><p><span>Req 4b 询问技术（如传感器）如何影响模型。答案是：技术是使 D-CSM 模型</span><em><span>得以实现</span></em><span>的</span><strong><span>数据基础设施</span></strong><span>。  </span></p><ol><li><p><strong><span>物联网 (IoT) 传感器（烟雾、温度）：</span></strong></p><ul><li><p><strong><span>作用：</span></strong><span> IoT 传感器（如智能烟雾/热探测器 ）是 </span><em><span>W</span><strong><span>ha</span></strong><span>z</span><strong><span>a</span></strong><span>r**d</span></em><span>(</span><em><span>e</span></em><span>,</span><em><span>t</span></em><span>) 的</span><strong><span>实时数据源</span></strong><span>。  </span></p></li><li><p><strong><span>对模型的影响：</span></strong><span> 当一个 IoT 烟雾探测器 被触发时，它会立即将 D-CSM 图中相应节点 </span><em><span>v</span></em><span> 的状态更新为“危险”，其所有相连边 </span><em><span>e</span></em><span> 的 </span><em><span>W</span></em><span>(</span><em><span>e</span></em><span>,</span><em><span>t</span></em><span>) 变为 ∞。这使 D-CSM 能够“调整疏散路径” ，引导响应者避开该区域。  </span></p></li></ul></li><li><p><strong><span>实时定位系统 (Real-Time Location System, RTLS)：</span></strong></p><ul><li><p><strong><span>作用：</span></strong><span> RTLS 提供响应者 </span><em><span>k</span></em><span> 的精确、实时位置 </span><em><span>S**k</span></em><span>(</span><em><span>t</span></em><span>)。  </span></p></li><li><p><strong><span>对模型的影响：</span></strong><span> </span><em><span>S**k</span></em><span>(</span><em><span>t</span></em><span>) 是 D-CSM 进行</span><em><span>重新规划</span></em><span>（例如动态 A*）的起点。没有 RTLS，模型只能 </span><em><span>假设</span></em><span> 响应者在他应该在的地方。在仓库的“迷宫”布局 中，RTLS 对于防止响应者迷失和确保模型位置同步至关重要 。  </span></p></li></ul></li><li><p><strong><span>建筑自动化系统 (Building Automation System, BAS)：</span></strong></p><ul><li><p><strong><span>作用：</span></strong><span> BAS 是一个</span><em><span>执行器</span></em><span> (Actuator)。  </span></p></li><li><p><strong><span>对模型的影响：</span></strong><span> BAS 主动</span><em><span>改变</span></em><span> D-CSM 的图 </span><em><span>G</span></em><span>(</span><em><span>t</span></em><span>)。例如，BAS 启动“楼梯间加压”和“分区 HVAC（暖通空调）关闭” 。这将阻止烟雾进入（），从而确保该楼梯的边权重 </span><em><span>W</span></em><span>(</span><em><span>s</span><strong><span>t</span></strong><span>ai**r</span></em><span>,</span><em><span>t</span></em><span>) </span><em><span>保持</span></em><span>低（不变为 ∞）。D-CSM 随后可以安全地将此楼梯规划为“安全路径”。  </span></p></li></ul></li></ol><p>&nbsp;</p><h2 id='第六部分疏散清扫策略的综合建议'><span>第六部分：疏散清扫策略的综合建议</span></h2><p>&nbsp;</p><p><span>（致：地方应急规划委员会的信函草案 ）  </span></p><p><strong><span>主题：基于优化模型的应急疏散清扫策略建议</span></strong></p><p><span>致地方应急规划委员会（Local Emergency Planning Committee）：</span></p><p><span>本报告基于对 XATU 委员会关于应急疏散清扫挑战 的深入建模分析，旨在提供一套具体、可行且基于数据的策略，以提升贵委员会辖区内的应急响应效率和人员安全。  </span></p><p><span>目前的应急预案 通常基于静态清单和预定角色。我们的分析表明，通过采用基于数学模型的动态优化方法，可以在规划和执行阶段实现显著改进。  </span></p><p>&nbsp;</p><h3 id='61-基于模型的疏散清扫策略'><span>6.1 基于模型的疏散清扫策略</span></h3><p>&nbsp;</p><p><span>我们建议采用一个两阶段的清扫策略框架：</span></p><p><strong><span>A. 规划阶段（静态优化 - CSM）：</span></strong><span> 在紧急情况发生</span><em><span>之前</span></em><span>，使用本报告第二至第四部分中详述的核心清扫模型 (CSM)，对高风险建筑进行“预计算”，以优化资源配置。</span></p><ul><li><p><strong><span>行动 1：建筑数字化。</span></strong><span> 将所有关键建筑（特别是日托中心、医院、仓库）的平面图数字化为图模型 </span><em><span>G</span></em><span>(</span><em><span>V</span></em><span>,</span><em><span>E</span></em><span>)。</span></p></li><li><p><strong><span>行动 2：风险分类。</span></strong><span> 根据居住者类型（例如，P1-日托 ，P2-办公室 ，P3-仓库 ）对建筑内的区域进行优先级分类。  </span></p></li><li><p><strong><span>行动 3：预计算最优解。</span></strong><span> 运行 CSM（Min-Max m-TSP）模型，为每栋建筑确定：</span></p><ol><li><p><strong><span>最优响应者数量 (</span><span>*</span><span>K</span><span>*</span><span>)</span></strong><span>：在不牺牲过多时间的情况下所需的最少人力。</span></p></li><li><p><strong><span>最优起始位置 (</span><span>*</span><span>V</span><span>*</span><em><span>s</span><span>*</span></em><span>t</span><span>*</span><em><span>a</span><span>*</span></em><span>r</span><span>*</span><span>*t</span><span>*</span><span>)</span></strong><span>：例如，我们的分析（第三部分）证明，对于图1的对称建筑，2名响应者从</span><em><span>两个相对的出口</span></em><span> (V1, V2) 同时开始是</span><em><span>最优</span></em><span>策略。</span></p></li><li><p><strong><span>基准清扫时间 (</span><span>*</span><span>T</span><span>*</span><em><span>ma</span><span>*</span></em><span>x</span><span>*</span><span>)</span></strong><span>：为演习和评估设定可量化的目标。</span></p></li></ol></li></ul><p><strong><span>B. 执行阶段（动态响应 - D-CSM）：</span></strong><span> 在紧急情况发生</span><em><span>期间</span></em><span>，接受“预案永远赶不上变化”的现实。使用本报告第五部分中详述的动态核心清扫模型 (D-CSM) 进行实时、自适应的指挥。</span></p><ul><li><p><strong><span>行动 1：建立数据驱动的指挥中心。</span></strong><span> 建立一个移动指挥中心，该中心能够实时接收来自建筑 IoT 传感器 和响应者 RTLS 的数据。  </span></p></li><li><p><strong><span>行动 2：运行 D-CSM。</span></strong><span> D-CSM 模型将实时数据（例如，火灾位置、烟雾蔓延 ）集成到动态图 </span><em><span>G</span></em><span>(</span><em><span>t</span></em><span>) 中。  </span></p></li><li><p><strong><span>行动 3：动态路径指引。</span></strong><span> D-CSM 持续（例如每30秒）重新计算最优路径，并通过无线电或头戴显示器向现场的响应者团队动态更新任务分配（例如，“R1，放弃 V5，V7 烟雾报警，立即前往 V8”）。</span></p></li></ul><p>&nbsp;</p><h3 id='62-针对不同建筑类型的具体建议'><span>6.2 针对不同建筑类型的具体建议</span></h3><p>&nbsp;</p><p><span>我们的模型表明，不同类型的建筑需要根本不同的清扫策略 。  </span></p><ol><li><p><span>对于日托中心及类似高危场所 ：  </span></p></li></ol><ul><li><p><strong><span>建议：</span></strong><span> 实施“基于优先级的清扫”协议。</span></p></li><li><p><strong><span>行动：</span></strong><span> 强制要求所有日托中心在提交给委员会的应急预案 中，明确标出“P1 - 绝对优先清扫”区域（如婴儿室）。在响应者（消防、警察）的培训中，必须强调清扫 P1 区域的优先权高于一切，正如我们的“Prioritized m-TSP”模型（4.1节）所强制执行的那样。  </span></p></li><li><p><span>对于大型仓库及复杂布局建筑 ：  </span></p></li></ul><ul><li><p><strong><span>建议：</span></strong><span> 解决“迷宫” 和“高架” 风险，确保响应者自身安全。  </span></p></li><li><p><strong><span>行动：</span></strong><span> 强制要求大型“迷宫式”仓库 安装 RTLS 信标 。这对于 D-CSM 跟踪响应者位置、防止其在烟雾中迷失、以及在响应者倒下时进行定位至关重要 。  </span></p></li></ul><p><strong><span>3. 对于所有新建商业建筑（技术集成）：</span></strong></p><ul><li><p><strong><span>建议：</span></strong><span> 建立“数据共享”基础设施，以启用 D-CSM。</span></p></li><li><p><strong><span>行动：</span></strong><span> 与建筑规范部门合作，要求新建筑的建筑自动化系统 (BAS) 和火警系统 具有标准化的数据接口 (API)。这能确保在紧急情况下，建筑的</span><em><span>传感器数据</span></em><span>（烟雾、热量 ）和</span><em><span>系统状态</span></em><span>（楼梯加压 ）能够被 D-CSM 自动读取，从而实现真正的智能化、最优化的应急响应。  </span></p></li></ul><p><span>通过从静态预案转向动态优化的清扫策略，委员会可以显著提高应急响应的效率和成功率。</span></p><p>&nbsp;</p><p><img src="https://t0.gstatic.com/faviconV2?url=https://www.firerescue1.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>firerescue1.com</span></p><p><span>How to conduct firefighter primary search training - FireRescue1</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t3.gstatic.com/faviconV2?url=https://exams.sdfdtraining.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>exams.sdfdtraining.com</span></p><p><span>Search &amp; Rescue - SDFD Training Division</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://www.fireengineering.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>fireengineering.com</span></p><p><span>Search Mission Prep: Size-Up, Methods, and Tools - Fire Engineering</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://www.tn.gov/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>tn.gov</span></p><p><span>Tennessee Emergency Management Plan (TEMP). - TN.gov</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://www.snohd.org/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>snohd.org</span></p><p><span>Child Care Center Disaster Response Handbook - Snohomish County Health Department</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://www.unomaha.edu/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>unomaha.edu</span></p><p><span>UNO Child Care Center Emergency Response Plan July 2013 - University of Nebraska Omaha</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t3.gstatic.com/faviconV2?url=https://www.sjcfl.us/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>sjcfl.us</span></p><p><span>Child Care Center Fire Code Information Booklet - St. Johns County</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://sfm.illinois.gov/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>sfm.illinois.gov</span></p><p><span>New Day Care Centers - Office of the Illinois State Fire Marshal</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://www.dcyf.wa.gov/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>dcyf.wa.gov</span></p><p><span>General Requirements to Help Prepare for State Fire Marshal Inspection - DCYF</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://www.mdpi.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>mdpi.com</span></p><p><span>Spatiotemporal Risk-Aware Patrol Planning Using Value-Based ...</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://www.fireengineering.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>fireengineering.com</span></p><p><span>STRUCTURE FIRES IN INDUSTRIAL PARKS - Fire Engineering</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://thefirefightonline.wordpress.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>thefirefightonline.wordpress.com</span></p><p><span>CLARK COUNTY FIRE DEPARTMENT TRUCK OPERATIONS MANUAL</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://apps.usfa.fema.gov/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>apps.usfa.fema.gov</span></p><p><span>Command and Control Decision Making at Multiple Alarm Incidents-Student Manual - National Fire Academy</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t2.gstatic.com/faviconV2?url=https://learning.sap.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>learning.sap.com</span></p><p><span>Outlining Warehouse Structures - SAP Learning</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://fireprotectionsupport.nl/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>fireprotectionsupport.nl</span></p><p><span>DS 8-9 Storage of Class 1, 2, 3, 4 and Plastic Commodities (Data Sheet) - Fire Protection Support</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://www.osha.gov/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>osha.gov</span></p><p><span>Fire Service Features of Buildings and Fire Protection Systems - OSHA</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t3.gstatic.com/faviconV2?url=https://digitalcommons.calpoly.edu/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>digitalcommons.calpoly.edu</span></p><p><span>Construction Warehouse - Digital Commons @ Cal Poly</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://www.mdpi.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>mdpi.com</span></p><p><span>Multi-Agent Coverage Path Planning Using Graph-Adapted K ...</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://arxiv.org/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>arxiv.org</span></p><p><span>Solving the Min-Max Multiple Traveling Salesmen Problem via Learning-Based Path Generation and Optimal Splitting - arXiv</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t3.gstatic.com/faviconV2?url=https://www.ifaamas.org/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>ifaamas.org</span></p><p><span>Learn to Solve the Min-max Multiple Traveling Salesmen Problem with Reinforcement Learning - IFAAMAS</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t3.gstatic.com/faviconV2?url=https://dspace.mit.edu/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>dspace.mit.edu</span></p><p><span>Optimizing Traveling Salesman Problem in Multi-Agent Systems with Practical Constraints - DSpace@MIT</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://arxiv.org/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>arxiv.org</span></p><p><span>MASP: Scalable Graph-based Planning towards Multi-Agent Navigation - arXiv</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://www.researchgate.net/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>researchgate.net</span></p><p><span>(PDF) Multi-agent based path planning for first responders among ...</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t2.gstatic.com/faviconV2?url=https://core.ac.uk/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>core.ac.uk</span></p><p><span>Developing an Agent-Based Evacuation Simulation Model Based on the Study of Human Behaviour in Fire Investigation Reports - CORE</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://assor.folk.ntnu.no/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>assor.folk.ntnu.no</span></p><p><span>Safe Autonomy for Marine Robotics - NTNU</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://math.ryerson.ca/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>math.ryerson.ca</span></p><p><span>FIGHTING CONSTRAINED FIRES IN GRAPHS 1. Introduction The Firefighter Problem was introduced by Hartnell [15], and is a simplifie - Department of Mathematics</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://www.mdpi.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>mdpi.com</span></p><p><span>A Prediction Model for Smoke Spread Path in High Rise Building Fires Based on Graph Theory - MDPI</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://www.researchgate.net/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>researchgate.net</span></p><p><span>Fire Scenario Zone Construction and Personnel Evacuation Planning Based on a Building Information Model and Geographical Information System - ResearchGate</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://www.mdpi.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>mdpi.com</span></p><p><span>Fire Scenario Zone Construction and Personnel Evacuation Planning Based on a Building Information Model and Geographical Information System - MDPI</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://www.mdpi.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>mdpi.com</span></p><p><span>Data-Driven Wildfire Spread Modeling of European Wildfires Using a Spatiotemporal Graph Neural Network - MDPI</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://www.researchgate.net/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>researchgate.net</span></p><p><span>Agent-Based Modeling and Simulation on Emergency Evacuation - ResearchGate</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://cgl.ethz.ch/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>cgl.ethz.ch</span></p><p><span>Volume rendering of smoke propagation CFD data - CGL @ ETHZ</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://pubmed.ncbi.nlm.nih.gov/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>pubmed.ncbi.nlm.nih.gov</span></p><p><span>Combining Computational Fluid Dynamics and Agent-Based Modeling: a new approach to evacuation planning - PubMed</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://www.mdpi.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>mdpi.com</span></p><p><span>Agent-Based Evacuation Modeling: Enhancing Building Safety in Emergency Scenarios</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://gaotek.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>gaotek.com</span></p><p><span>Building Automation - Fire Safety IoT - GAO Tek</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t3.gstatic.com/faviconV2?url=https://elevatorworld.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>elevatorworld.com</span></p><p><span>IoT&#39;s Role in Fire Safety and Evacuation - Elevator World</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t2.gstatic.com/faviconV2?url=https://www.kandasoft.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>kandasoft.com</span></p><p><span>Revolutionizing Disaster Management with IoT ... - Kanda Software</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t2.gstatic.com/faviconV2?url=https://www.controlsystems.net/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>controlsystems.net</span></p><p><span>Fire Protection Systems &amp; Service - Birmingham Alabama</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://patents.google.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>patents.google.com</span></p><p><span>WO2018206934A1 - Real-time location sensing system - Google Patents</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://www.va.gov/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>va.gov</span></p><p><span>VHA DIRECTIVE 1761 Veterans Health Administration Transmittal Sheet - VA.gov</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t0.gstatic.com/faviconV2?url=https://www.realtimenetworks.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>realtimenetworks.com</span></p><p><span>Everything You Need to Know About Workplace Safety Programs - Real Time Networks</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t3.gstatic.com/faviconV2?url=https://constructtwo.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>constructtwo.com</span></p><p><span>Building Automation Systems vs. Traditional Construction: Which Delivers Better ROI?</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://www.workero.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>workero.com</span></p><p><span>Ultimate Guide to Smart Building Automation - Workero</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t3.gstatic.com/faviconV2?url=https://claroty.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>claroty.com</span></p><p><span>The Power of Building Management System (BMS) Cybersecurity - Claroty</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://www.contest.comap.com/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>contest.comap.com</span></p><p><span>2025 HiMCM Problem A: Emergency Evacuation Sweeps - COMAP - Contests</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t1.gstatic.com/faviconV2?url=https://www.ohlone.edu/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>ohlone.edu</span></p><p><span>Emergency Operations Plan 2020 - Ohlone College</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t3.gstatic.com/faviconV2?url=https://ncchildcare.ncdhhs.gov/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>ncchildcare.ncdhhs.gov</span></p><p><span>Emergency Plan Template - Division of Child Development and Early Education</span></p><p><span>在新窗口中打开</span></p><p><img src="https://t3.gstatic.com/faviconV2?url=https://www.scchildcare.org/&amp;client=BARD&amp;type=FAVICON&amp;size=256&amp;fallback_opts=TYPE,SIZE,URL" referrerpolicy="no-referrer" alt="img"></p><p><span>scchildcare.org</span></p><p><span>Child Care Emergency Plan Template</span></p></div></div>
+</body>
+</html>
